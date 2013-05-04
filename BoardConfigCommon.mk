@@ -67,6 +67,11 @@ TARGET_SPECIFIC_HEADER_PATH += device/htc/m7-common/include
 # Graphics
 HAVE_ADRENO_SOURCE := false
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+TARGET_SPECIFIC_HEADER_PATH := device/htc/m7-common/include
+
+# Flags
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80600000
@@ -93,6 +98,9 @@ BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 -include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += device/htc/m7-common/sepolicy
+
+# We have the new GPS driver
+BOARD_HAVE_NEW_QC_GPS := true
 
 # Wifi
 BOARD_HOSTAPD_DRIVER             := NL80211
