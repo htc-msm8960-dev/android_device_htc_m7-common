@@ -65,18 +65,18 @@ struct mode_config_t {
     const char *eq;
 };
 
-enum {
-    TFA9887_MODE_PLAYBACK = 0,
-    TFA9887_MODE_RING,
-    TFA9887_MODE_VOICE,
-    TFA9887_MODE_MAX,
-};
+typedef enum Tfa9887_Mode {
+    Tfa9887_Mode_Playback = 0,
+    Tfa9887_Mode_Ring,
+    Tfa9887_Mode_Voice,
+    Tfa9887_Num_Modes,
+} Tfa9887_Mode_t;
 
-enum {
-    TFA9887_MUTE_OFF = 0,
-    TFA9887_MUTE_DIGITAL,
-    TFA9887_MUTE_AMPLIFIER,
-};
+typedef enum Tfa9887_Mute {
+    Tfa9887_Mute_Off,
+    Tfa9887_Mute_Digital,
+    Tfa9887_Mute_Amplifier
+} Tfa9887_Mute_t;
 
 /* possible memory values for DMEM in CF_CONTROLs */
 enum {
@@ -202,10 +202,6 @@ struct tfa9887_amp_t {
 #define TFA9887_CF_STATUS (0x73)
 #define TFA9887_MTP (0x80)
 
-#define I2S_MIXER_CTL "MI2S_RX Audio Mixer MultiMedia1"
-
-int tfa9887_open(void);
 int tfa9887_set_mode(audio_mode_t mode);
-int tfa9887_close(void);
 
 #endif

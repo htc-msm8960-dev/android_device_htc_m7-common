@@ -30,50 +30,62 @@
 
 #define UNUSED __attribute__((unused))
 
-#define DEVICE_OUT_SPEAKER 0x2
 #define DEVICE_OUT_WIRED_HEADSET 0x4
 #define DEVICE_OUT_WIRED_HEADPHONE 0x8
 
-typedef struct m7_device {
+typedef struct tfa9887_device {
     amplifier_device_t amp_dev;
+    uint32_t current_input_devices;
     uint32_t current_output_devices;
     audio_mode_t current_mode;
-} m7_device_t;
+} tfa9887_device_t;
 
-static m7_device_t *m7_dev = NULL;
+static tfa9887_device_t *tfa9887_dev = NULL;
 
 static int amp_set_mode(amplifier_device_t *device, audio_mode_t mode)
 {
     int ret = 0;
-    m7_device_t *dev = (m7_device_t *) device;
+    tfa9887_device_t *tfa9887 = (tfa9887_device_t *) device;
 
-    dev->current_mode = mode;
+    tfa9887->current_mode = mode;
+
+    if ((tfa9887->current_output_devices & DEVICE_OUT_WIRED_HEADSET) ||
+            (tfa9887->current_output_devices & DEVICE_OUT_WIRED_HEADPHONE)) {
+        /* Write config for headset amplifier */
+        ret = rt5501_set_mode(mode);
+    } else {
+        /* Write config for speaker amplifier */
+        ret = tfa9887_set_mode(mode);
+    }
 
     return ret;
 }
 
-static int amp_set_output_devices(amplifier_device_t *device, uint32_t devices)
+static int amp_set_input_devices(amplifier_device_t *device, uint32_t devices)
 {
-    m7_device_t *dev = (m7_device_t *) device;
+    tfa9887_device_t *tfa9887 = (tfa9887_device_t *) device;
 
-    dev->current_output_devices = devices;
-
-    if ((dev->current_output_devices & DEVICE_OUT_WIRED_HEADSET) ||
-            (dev->current_output_devices & DEVICE_OUT_WIRED_HEADPHONE)) {
-        rt5501_set_mode(dev->current_mode);
+    if (devices != 0) {
+        if (tfa9887->current_input_devices != devices) {
+            tfa9887->current_input_devices = devices;
+            /* Set amplifier mode when device changes */
+            amp_set_mode(device, tfa9887->current_mode);
+        }
     }
 
     return 0;
 }
 
-static int amp_output_stream_start(amplifier_device_t *device,
-        UNUSED struct audio_stream_out *stream, UNUSED bool offload)
+static int amp_set_output_devices(amplifier_device_t *device, uint32_t devices)
 {
-    m7_device_t *dev = (m7_device_t *) device;
+    tfa9887_device_t *tfa9887 = (tfa9887_device_t *) device;
 
-    if (dev->current_output_devices & DEVICE_OUT_SPEAKER) {
-        /* TFA9887 requires I2S to be active in order to change mode */
-        tfa9887_set_mode(dev->current_mode);
+    if (devices != 0) {
+        if (tfa9887->current_output_devices != devices) {
+            tfa9887->current_output_devices = devices;
+            /* Set amplifier mode when device changes */
+            amp_set_mode(device, tfa9887->current_mode);
+        }
     }
 
     return 0;
@@ -81,11 +93,9 @@ static int amp_output_stream_start(amplifier_device_t *device,
 
 static int amp_dev_close(hw_device_t *device)
 {
-    m7_device_t *dev = (m7_device_t *) device;
+    tfa9887_device_t *tfa9887 = (tfa9887_device_t *) device;
 
-    tfa9887_close();
-
-    free(dev);
+    free(tfa9887);
 
     return 0;
 }
@@ -93,38 +103,37 @@ static int amp_dev_close(hw_device_t *device)
 static int amp_module_open(const hw_module_t *module, UNUSED const char *name,
         hw_device_t **device)
 {
-    if (m7_dev) {
+    if (tfa9887_dev) {
         ALOGE("%s:%d: Unable to open second instance of TFA9887 amplifier\n",
                 __func__, __LINE__);
         return -EBUSY;
     }
 
-    m7_dev = calloc(1, sizeof(m7_device_t));
-    if (!m7_dev) {
+    tfa9887_dev = calloc(1, sizeof(tfa9887_device_t));
+    if (!tfa9887_dev) {
         ALOGE("%s:%d: Unable to allocate memory for amplifier device\n",
                 __func__, __LINE__);
         return -ENOMEM;
     }
 
-    m7_dev->amp_dev.common.tag = HARDWARE_DEVICE_TAG;
-    m7_dev->amp_dev.common.module = (hw_module_t *) module;
-    m7_dev->amp_dev.common.version = HARDWARE_DEVICE_API_VERSION(1, 0);
-    m7_dev->amp_dev.common.close = amp_dev_close;
+    tfa9887_dev->amp_dev.common.tag = HARDWARE_DEVICE_TAG;
+    tfa9887_dev->amp_dev.common.module = (hw_module_t *) module;
+    tfa9887_dev->amp_dev.common.version = HARDWARE_DEVICE_API_VERSION(1, 0);
+    tfa9887_dev->amp_dev.common.close = amp_dev_close;
 
-    m7_dev->amp_dev.set_input_devices = NULL;
-    m7_dev->amp_dev.set_output_devices = amp_set_output_devices;
-    m7_dev->amp_dev.set_mode = amp_set_mode;
-    m7_dev->amp_dev.output_stream_start = amp_output_stream_start;
-    m7_dev->amp_dev.input_stream_start = NULL;
-    m7_dev->amp_dev.output_stream_standby = NULL;
-    m7_dev->amp_dev.input_stream_standby = NULL;
+    tfa9887_dev->amp_dev.set_input_devices = amp_set_input_devices;
+    tfa9887_dev->amp_dev.set_output_devices = amp_set_output_devices;
+    tfa9887_dev->amp_dev.set_mode = amp_set_mode;
+    tfa9887_dev->amp_dev.output_stream_start = NULL;
+    tfa9887_dev->amp_dev.input_stream_start = NULL;
+    tfa9887_dev->amp_dev.output_stream_standby = NULL;
+    tfa9887_dev->amp_dev.input_stream_standby = NULL;
 
-    m7_dev->current_output_devices = 0;
-    m7_dev->current_mode = AUDIO_MODE_NORMAL;
+    tfa9887_dev->current_input_devices = 0;
+    tfa9887_dev->current_output_devices = 0;
+    tfa9887_dev->current_mode = AUDIO_MODE_NORMAL;
 
-    *device = (hw_device_t *) m7_dev;
-
-    tfa9887_open();
+    *device = (hw_device_t *) tfa9887_dev;
 
     return 0;
 }

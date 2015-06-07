@@ -32,11 +32,9 @@
 
 #include "tfa9887.h"
 
-#define UNUSED __attribute__((unused))
-
 /* Module variables */
 
-const struct mode_config_t right_mode_configs[TFA9887_MODE_MAX] = {
+const struct mode_config Tfa9887_Right_Mode_Configs[Tfa9887_Num_Modes] = {
     {   /* Playback */
         .config = CONFIG_PLAYBACK_R,
         .preset = PRESET_PLAYBACK_R,
@@ -54,7 +52,7 @@ const struct mode_config_t right_mode_configs[TFA9887_MODE_MAX] = {
     }
 };
 
-const struct mode_config_t left_mode_configs[TFA9887_MODE_MAX] = {
+const struct mode_config Tfa9887_Left_Mode_Configs[Tfa9887_Num_Modes] = {
     {   /* Playback */
         .config = CONFIG_PLAYBACK_L,
         .preset = PRESET_PLAYBACK_L,
@@ -72,10 +70,9 @@ const struct mode_config_t left_mode_configs[TFA9887_MODE_MAX] = {
     }
 };
 
-#define AMP_RIGHT 0
-#define AMP_LEFT 1
-#define AMP_MAX 2
-static struct tfa9887_amp_t *amps = NULL;
+static bool tfa9887_initialized = false;
+static bool tfa9887l_initialized = false;
+static Tfa9887_Mode_t tfa9887_mode = Tfa9887_Num_Modes;
 
 /* Helper functions */
 
