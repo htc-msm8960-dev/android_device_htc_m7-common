@@ -32,9 +32,11 @@
 
 #include "tfa9887.h"
 
+#define UNUSED __attribute__((unused))
+
 /* Module variables */
 
-const struct mode_config Tfa9887_Right_Mode_Configs[Tfa9887_Num_Modes] = {
+const struct mode_config_t right_mode_configs[TFA9887_MODE_MAX] = {
     {   /* Playback */
         .config = CONFIG_PLAYBACK_R,
         .preset = PRESET_PLAYBACK_R,
@@ -52,7 +54,7 @@ const struct mode_config Tfa9887_Right_Mode_Configs[Tfa9887_Num_Modes] = {
     }
 };
 
-const struct mode_config Tfa9887_Left_Mode_Configs[Tfa9887_Num_Modes] = {
+const struct mode_config_t left_mode_configs[TFA9887_MODE_MAX] = {
     {   /* Playback */
         .config = CONFIG_PLAYBACK_L,
         .preset = PRESET_PLAYBACK_L,
@@ -70,9 +72,10 @@ const struct mode_config Tfa9887_Left_Mode_Configs[Tfa9887_Num_Modes] = {
     }
 };
 
-static bool tfa9887_initialized = false;
-static bool tfa9887l_initialized = false;
-static Tfa9887_Mode_t tfa9887_mode = Tfa9887_Num_Modes;
+#define AMP_RIGHT 0
+#define AMP_LEFT 1
+#define AMP_MAX 2
+static struct tfa9887_amp_t *amps = NULL;
 
 /* Helper functions */
 
@@ -1215,7 +1218,7 @@ int tfa9887_set_mode(audio_mode_t mode)
     for (i = 0; i < AMP_MAX; i++) {
         amp = &amps[i];
         if (dsp_mode == amp->mode) {
-            ALOGV("No mode change needed, already mode %d", dsp_mode);
+            ALOGI("No mode change needed, already mode %d", dsp_mode);
             continue;
         }
         rc = tfa9887_lock(amp, true);
@@ -1233,7 +1236,7 @@ int tfa9887_set_mode(audio_mode_t mode)
         rc = tfa9887_lock(amp, false);
     }
 
-    ALOGV("%s: Set amplifier audio mode to %d\n", __func__, mode);
+    ALOGI("%s: Set amplifier audio mode to %d\n", __func__, mode);
 
     return 0;
 }
