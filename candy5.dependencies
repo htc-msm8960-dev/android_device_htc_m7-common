@@ -1,17 +1,17 @@
 [
   {
     "repository": "CandyDevices/device_htc_msm8960-common",
-    "target_path": "device/htc/msm8960-common"
+    "target_path": "device/htc/msm8960-common",
     "branch": "c5.1"
   },
   {
     "repository": "CandyDevices/kernel_htc_msm8960",
-    "target_path": "kernel/htc/msm8960"
+    "target_path": "kernel/htc/msm8960",
     "branch": "c5.1"
   },
   {
     "repository": "CandyDevices/hardware_qcom_fm",
-    "target_path": "hardware/qcom/fm"
+    "target_path": "hardware/qcom/fm",
     "branch": "c5.1"
   }
 ]
