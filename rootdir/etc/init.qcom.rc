@@ -324,6 +324,7 @@ service cir_fw_update /system/bin/cir_fw_update -u cir.img
 
 service netmgrd /system/bin/netmgrd
     class core
+    group system
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
