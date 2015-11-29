@@ -1,0 +1,22 @@
+[
+  {
+    "repository": "CyanogenMod/android_device_htc_msm8960-common",
+    "target_path": "device/htc/msm8960-common",
+    "branch": "cm-13.0"
+  },
+  {
+    "repository": "CandyDevices/kernel_htc_msm8960",
+    "target_path": "kernel/htc/msm8960",
+    "branch": "c6"
+  },
+  {
+    "repository": "CyanogenMod/android_hardware_qcom_fm",
+    "target_path": "hardware/qcom/fm",
+    "branch": "cm-13.0"
+  },
+  {
+    "repository": "CyanogenMod/android_external_sony_boringssl-compat",
+    "target_path": "external/sony/boringssl-compat",
+    "branch": "cm-13.0"
+  }
+]
