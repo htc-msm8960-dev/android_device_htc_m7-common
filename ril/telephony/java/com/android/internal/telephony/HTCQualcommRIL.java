@@ -32,6 +32,7 @@ import android.telephony.Rlog;
 
 import com.android.internal.telephony.uicc.IccCardApplicationStatus;
 import com.android.internal.telephony.uicc.IccCardStatus;
+import com.android.internal.telephony.uicc.IccUtils;
 import com.android.internal.telephony.dataconnection.DcFailCause;
 import com.android.internal.telephony.dataconnection.DataCallResponse;
 
