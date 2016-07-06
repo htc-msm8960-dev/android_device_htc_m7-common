@@ -90,7 +90,7 @@ int loc_eng_nmea_put_checksum(char *pNmea, int maxSize)
     }
 
     int checksumLength = snprintf(pNmea, maxSize,"*%02X\r\n", checksum);
-    return (length + checksumLength);
+    return (length + checksumLength + 1);
 }
 
 /*===========================================================================
