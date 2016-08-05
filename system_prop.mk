@@ -1,6 +1,16 @@
+
 # Art
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-swap=false
+
+# Audio
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio.offload.disable=1 \
+    persist.audio.fluence.speaker=true \
+    persist.audio.fluence.voicecall=true \
+    persist.audio.fluence.voicerec=false \
+    ro.qc.sdk.audio.fluencetype=fluence \
+    use.dedicated.device.for.voip=true
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \

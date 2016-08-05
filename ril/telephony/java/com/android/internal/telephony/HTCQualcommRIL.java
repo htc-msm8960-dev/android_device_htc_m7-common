@@ -1,5 +1,6 @@
+
 /*
- * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +43,8 @@ public class HTCQualcommRIL extends RIL implements CommandsInterface {
     private static final int RIL_UNSOL_CDMA_3G_INDICATOR = 3009;
     private static final int RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR = 3012;
     private static final int RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL = 3020;
+    private static final int RIL_UNSOL_TPMR_ID = 3024;
+    private static final int RIL_UNSOL_SECTOR_ID_IND = 3057;
     private static final int RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE = 6002;
     private static final int RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED = 21004;
     private static final int RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED = 21005;
@@ -56,6 +59,24 @@ public class HTCQualcommRIL extends RIL implements CommandsInterface {
         super(context, networkMode, cdmaSubscription, instanceId);
     }
 
+    @Override
+    protected Object
+    responseIccCardStatus(Parcel p) {
+        final int CARDSTATE_ABSENT = 0;
+        final int CARDSTATE_ERROR = 2;
+        int dataPosition = p.dataPosition();
+        int cardState = p.readInt();
+
+        if (cardState > CARDSTATE_ERROR) {
+            p.setDataPosition(dataPosition);
+            p.writeInt(CARDSTATE_ABSENT);
+        }
+
+        p.setDataPosition(dataPosition);
+
+        return super.responseIccCardStatus(p);
+    }
+
     private static String
     responseToStringHTC(int request) {
         switch(request) {
@@ -63,6 +84,8 @@ public class HTCQualcommRIL extends RIL implements CommandsInterface {
             case RIL_UNSOL_CDMA_3G_INDICATOR: return "UNSOL_CDMA_3G_INDICATOR";
             case RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR: return "UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR";
             case RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL: return "UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL";
+            case RIL_UNSOL_TPMR_ID: return "UNSOL_TPMR_ID";
+            case RIL_UNSOL_SECTOR_ID_IND: return "UNSOL_SECTOR_ID_IND";
             case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE: return "UNSOL_RESPONSE_PHONE_MODE_CHANGE";
             case RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED: return "UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED";
             case RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED: return "UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED";
@@ -83,6 +106,8 @@ public class HTCQualcommRIL extends RIL implements CommandsInterface {
             case RIL_UNSOL_CDMA_3G_INDICATOR:  ret = responseInts(p); break;
             case RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR:  ret = responseInts(p); break;
             case RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL:  ret = responseStrings(p); break;
+            case RIL_UNSOL_TPMR_ID: ret = responseInts(p); break;
+            case RIL_UNSOL_SECTOR_ID_IND: ret = responseString(p); break;
             case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE:  ret = responseInts(p); break;
             case RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED: ret = responseVoid(p); break;
             case RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED: ret = responseVoid(p); break;
@@ -102,6 +127,8 @@ public class HTCQualcommRIL extends RIL implements CommandsInterface {
             case RIL_UNSOL_CDMA_3G_INDICATOR:
             case RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR:
             case RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL:
+            case RIL_UNSOL_TPMR_ID:
+            case RIL_UNSOL_SECTOR_ID_IND:
             case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE:
             case RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED:
             case RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED:
@@ -119,17 +146,33 @@ public class HTCQualcommRIL extends RIL implements CommandsInterface {
     }
 
     @Override
+    public void getRadioCapability(Message response) {
+        if (response == null)
+            return;
+
+        if (RILJ_LOGD) riljLog("HTCQualcommRIL: returning static radio capability");
+        Object ret = makeStaticRadioCapability();
+        AsyncResult.forMessage(response, ret, null);
+        response.sendToTarget();
+    }
+
+    @Override
     protected void
     send(RILRequest rr) {
-        if (rr.mRequest >= RIL_REQUEST_GET_CELL_INFO_LIST) {
-            if (RILJ_LOGD) {
-                riljLog("HTCQualcommRIL: received unsupported request "
-                        + rr.mRequest);
-            }
-            rr.onError(REQUEST_NOT_SUPPORTED, null);
-            rr.release();
-        } else {
-            super.send(rr);
+        switch (rr.mRequest) {
+            case RIL_REQUEST_GET_CELL_INFO_LIST:
+            case RIL_REQUEST_SET_INITIAL_ATTACH_APN:
+            case RIL_REQUEST_SET_DATA_PROFILE:
+                if (RILJ_LOGD) {
+                    riljLog("HTCQualcommRIL: received unsupported request "
+                            + rr.mRequest);
+                }
+                rr.onError(REQUEST_NOT_SUPPORTED, null);
+                rr.release();
+                break;
+            default:
+                super.send(rr);
+                break;
         }
     }
 }
