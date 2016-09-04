@@ -72,6 +72,7 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 # Kernel
 BOARD_KERNEL_BASE := 0x80600000
 BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom user_debug=31
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01800000
 TARGET_KERNEL_CONFIG := m7_defconfig
@@ -79,7 +80,7 @@ TARGET_KERNEL_SOURCE := kernel/htc/msm8960
 
 # Recovery
 BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
-BOARD_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+BOARD_NO_SECURE_DISCARD := true
 TARGET_RECOVERY_DEVICE_DIRS += device/htc/m7-common
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
