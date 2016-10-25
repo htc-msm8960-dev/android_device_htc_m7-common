@@ -148,6 +148,11 @@ on init
     chmod 0660 /sys/camera_htccallback/htccallback
     restorecon /sys/camera_htccallback/htccallback
 
+    # Vibrator
+    chown root system /sys/class/timed_output/vibrator/voltage_level
+    chmod 0664 /sys/class/timed_output/vibrator/voltage_level
+    restorecon /sys/class/timed_output/vibrator/voltage_level
+
     # Touchscreen
     chown system system /sys/class/leds/button-backlight/currents
 
