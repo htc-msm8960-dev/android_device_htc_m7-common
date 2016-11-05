@@ -141,6 +141,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libqcomvoiceprocessing
 
+# Widevine
+PRODUCT_PACKAGES += \
+    libshim_wvm
+
 # WiFi
 PRODUCT_PACKAGES += \
     libnetcmdiface
