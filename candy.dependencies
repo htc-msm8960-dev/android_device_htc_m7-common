@@ -1,5 +1,5 @@
 [{
-	"branch": "c7.1.1",
+	"branch": "c7.1.2",
 	"repository": "CandyDevices/device_htc_msm8960-common",
 	"target_path": "device/htc/msm8960-common"
 }, {
@@ -13,17 +13,12 @@
 	"target_path": "external/sony/boringssl-compat",
 	"remote": "github"
 }, {
-	"branch": "cm-14.1",
-	"repository": "TheMuppets/proprietary_vendor_qcom_binaries",
-	"target_path": "vendor/qcom/binaries",
-	"remote": "github"
-}, {
-	"branch": "cm-14.1",
-	"repository": "TheMuppets/proprietary_vendor_htc",
+	"branch": "c7.1.2",
+	"repository": "CandyDevices/proprietary_vendor_htc",
 	"target_path": "vendor/htc",
 	"remote": "github"
 }, {
-	"branch": "c7.1.1",
+	"branch": "c7.1.2",
 	"repository": "CandyDevices/kernel_htc_msm8960",
 	"target_path": "kernel/htc/msm8960"
 }]
