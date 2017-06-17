@@ -45,10 +45,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.baseband.arch=mdm \
     ro.telephony.ril_class=HTCQualcommRIL
 
-# Scheduler
-PRODUCT_PROPERTY_OVERRIDES += \
-    sys.io.scheduler=bfq
-
 # Time services
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true
