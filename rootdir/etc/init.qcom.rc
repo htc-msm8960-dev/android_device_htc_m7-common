@@ -164,6 +164,10 @@ on init
 
     # Touchscreen
     chown system system /sys/class/leds/button-backlight/currents
+    chown system system /sys/android_touch/doubletap2wake
+    chmod 0660 /sys/android_touch/doubletap2wake
+    chown system system /sys/android_touch/pocket_detect
+    chmod 0660 /sys/android_touch/pocket_detect
    
     # ZRAM setup
     write /sys/block/zram0/comp_algorithm lz4

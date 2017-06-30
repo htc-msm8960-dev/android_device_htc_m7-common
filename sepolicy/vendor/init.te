@@ -40,3 +40,4 @@ allow init sysfs_mpdecision:file rw_file_perms;
 allow init sysfs_thermal:file rw_file_perms;
 allow init gpu_device:chr_file rw_file_perms;
 allow init graphics_device:chr_file rw_file_perms;
+allow init doubletap2wake_sysfs:file rw_file_perms;

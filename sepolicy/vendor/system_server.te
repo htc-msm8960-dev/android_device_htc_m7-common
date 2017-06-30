@@ -5,3 +5,5 @@ allow system_server vibeamp_sysfs:file rw_file_perms;
 allow system_server media_rw_data_file:file open;
 allow system_server init:binder { call transfer };
 allow system_server proc:file { getattr open read };
+allow system_server doubletap2wake_sysfs:dir search;
+allow system_server doubletap2wake_sysfs:file rw_file_perms;
