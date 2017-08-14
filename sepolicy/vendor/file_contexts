@@ -85,6 +85,10 @@
 /sys/devices/virtual/graphics/fb1/product_description  -- u:object_r:surfaceflinger_sysfs:s0
 /sys/devices/virtual/graphics/fb1/vendor_name          -- u:object_r:surfaceflinger_sysfs:s0
 
+# Sysfs
+/sys/devices/platform/msm_sdcc\.3/mmc_host(/.*)?                                  u:object_r:sysfs_usb:s0
+/sys/devices/platform/msm_hsusb_host(/.*)?                                        u:object_r:sysfs_usb:s0
+
 /(vendor|system/vendor)/bin/efsks                                               u:object_r:mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/qcks                                                u:object_r:mdm_helper_exec:s0
 /(vendor|system/vendor)/blobs/(.*)/bin/netmgrd                                                u:object_r:netmgrd_exec:s0
