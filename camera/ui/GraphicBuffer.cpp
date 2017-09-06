@@ -34,16 +34,9 @@ namespace android {
 // Buffer and implementation of ANativeWindowBuffer
 // ===========================================================================
 
-static uint64_t getUniqueId() {
-    static volatile int32_t nextId = 0;
-    uint64_t id = static_cast<uint64_t>(getpid()) << 32;
-    id |= static_cast<uint32_t>(android_atomic_inc(&nextId));
-    return id;
-}
-
 GraphicBuffer::GraphicBuffer()
     : BASE(), mOwner(ownData), mBufferMapper(GraphicBufferMapper::get()),
-      mInitCheck(NO_ERROR), mId(getUniqueId())
+      mInitCheck(NO_ERROR)
 {
     width  = 
     height = 
@@ -56,7 +49,7 @@ GraphicBuffer::GraphicBuffer()
 GraphicBuffer::GraphicBuffer(uint32_t w, uint32_t h,
         PixelFormat reqFormat, uint32_t reqUsage)
     : BASE(), mOwner(ownData), mBufferMapper(GraphicBufferMapper::get()),
-      mInitCheck(NO_ERROR), mId(getUniqueId())
+      mInitCheck(NO_ERROR)
 {
     width  =
     height =
@@ -72,7 +65,7 @@ GraphicBuffer::GraphicBuffer(uint32_t w, uint32_t h,
         uint32_t inStride, native_handle_t* inHandle, bool keepOwnership)
     : BASE(), mOwner(keepOwnership ? ownHandle : ownNone),
       mBufferMapper(GraphicBufferMapper::get()),
-      mInitCheck(NO_ERROR), mId(getUniqueId())
+      mInitCheck(NO_ERROR)
 {
     width  = w;
     height = h;
@@ -85,7 +78,7 @@ GraphicBuffer::GraphicBuffer(uint32_t w, uint32_t h,
 GraphicBuffer::GraphicBuffer(ANativeWindowBuffer* buffer, bool keepOwnership)
     : BASE(), mOwner(keepOwnership ? ownHandle : ownNone),
       mBufferMapper(GraphicBufferMapper::get()),
-      mInitCheck(NO_ERROR), mWrappedBuffer(buffer), mId(getUniqueId())
+      mInitCheck(NO_ERROR), mWrappedBuffer(buffer)
 {
     width  = buffer->width;
     height = buffer->height;
