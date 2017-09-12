@@ -12,7 +12,7 @@ LOCAL_SRC_FILES := \
      ui/GraphicBufferMapper.cpp
 
 LOCAL_SHARED_LIBRARIES := \
-    libbinder libcutils libgui libhardware liblog libsync libui libutils
+    libbinder libcutils libgui libhardware liblog libsensor libsync libui libutils
 
 LOCAL_MODULE := libcamera_shim
 LOCAL_MODULE_TAGS := optional
