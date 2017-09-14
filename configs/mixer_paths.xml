@@ -26,7 +26,6 @@
     <ctl name="AUX_PCM_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="AUX_PCM_RX Audio Mixer MultiMedia4" value="0" />
     <ctl name="AUX_PCM_RX Audio Mixer MultiMedia5" value="0" />
-    <ctl name="AUX_PCM_RX_Voice Mixer Voice Stub" value="0" />
     <ctl name="AUX_PCM_RX_Voice Mixer Voip" value="0" />
     <ctl name="AUXPCM_RX Port Mixer SLIM_1_TX" value="0" />
     <ctl name="DAC1 Switch" value="0" />
@@ -73,7 +72,6 @@
     <ctl name="MI2S_RX_Voice Mixer Voice Stub" value="0" />
     <ctl name="MI2S_RX_Voice Mixer Voip" value="0" />
     <ctl name="MICBIAS1 CAPLESS Switch" value="0" />
-    <ctl name="MICBIAS1 PD MODE" value="0" />
     <ctl name="MICBIAS3 CAPLESS Switch" value="0" />
     <ctl name="MultiMedia1 Mixer AFE_PCM_TX" value="0" />
     <ctl name="MultiMedia1 Mixer AUX_PCM_UL_TX" value="0" />
@@ -83,8 +81,6 @@
     <ctl name="MultiMedia2 Mixer INTERNAL_FM_TX" value="0" />
     <ctl name="MultiMedia4 Mixer SLIM_0_TX" value="0" />
     <ctl name="MultiMedia5 Mixer AFE_PCM_TX" value="0" />
-    <ctl name="MultiMedia5 Mixer AUX_PCM_TX" value="0" />
-    <ctl name="MultiMedia5 Mixer AUX_PCM_UL_TX" value="0" />
     <ctl name="MultiMedia5 Mixer SLIM_0_TX" value="0" />
     <ctl name="RCV AMP EN Switch" value="0" />
     <ctl name="RX1 Digital Volume" value="0" />
@@ -93,13 +89,11 @@
     <ctl name="RX3 Digital Volume" value="0" />
     <ctl name="RX3 MIX1 INP1" value="ZERO" />
     <ctl name="RX3 MIX1 INP2" value="ZERO" />
-    <ctl name="RX3 MIX1 INP3" value="ZERO" />
     <ctl name="RX4 Digital Volume" value="0" />
     <ctl name="RX4 DSM MUX" value="CIC_OUT" />
     <ctl name="RX5 Digital Volume" value="0" />
     <ctl name="RX5 MIX1 INP1" value="ZERO" />
     <ctl name="RX5 MIX1 INP2" value="ZERO" />
-    <ctl name="RX5 MIX1 INP3" value="ZERO" />
     <ctl name="RX6 Digital Volume" value="0" />
     <ctl name="RX6 DSM MUX" value="CIC_OUT" />
     <ctl name="RX7 MIX1 INP1" value="ZERO" />
@@ -111,7 +105,6 @@
     <ctl name="SLIM_0_RX_Voice Mixer Voip" value="0" />
     <ctl name="SLIM_0_TX Channels" value="One" />
     <ctl name="SLIM_1 SampleRate" value="8000" />
-    <ctl name="SLIM_1_RX Channels" value="One" />
     <ctl name="SLIM_3_RX Channels" value="One" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia2" value="0" />
@@ -277,12 +270,10 @@
 
     <!-- HiFi Lowlatency RecBT SCO Tx -->
     <path name="low-latency-record bt-sco">
-        <ctl name="MultiMedia5 Mixer AUX_PCM_UL_TX" value="1" />
     </path>
 
     <!-- HiFi Lowlatency RecBT SCO WB Tx -->
     <path name="low-latency-record bt-sco-wb">
-        <ctl name="MultiMedia5 Mixer AUX_PCM_UL_TX" value="1" />
     </path>
 
     <!-- FM REC -->
@@ -316,11 +307,9 @@
 
     <!-- Voice Call Base BT SCO Tx -->
     <path name="voice-call-bt-sco-tx">
-        <ctl name="SLIM_1_RX Channels" value="One" />
         <ctl name="Voice Stub Tx Mixer AUX_PCM_UL_TX" value="1" />
         <ctl name="SLIMBUS_1_RX Mixer Voice Stub" value="1" />
         <ctl name="Voice Stub Tx Mixer SLIM_1_TX" value="1" />
-        <ctl name="AUX_PCM_RX_Voice Mixer Voice Stub" value="1" />
         <ctl name="SLIMBUS_1_RX Port Mixer AUX_PCM_UL_TX" value="1" />
         <ctl name="AUXPCM_RX Port Mixer SLIM_1_TX" value="1" />
         <ctl name="SLIM_3_RX Channels" value="One" />
@@ -768,8 +757,6 @@
         <ctl name="DEC5 MUX" value="ADC2" />
         <ctl name="DEC5 Volume" value="84" />
         <ctl name="ADC2 Volume" value="3" />
-        <ctl name="RX3 MIX1 INP3" value="IIR1" />
-        <ctl name="RX5 MIX1 INP3" value="IIR1" />
         <ctl name="IIR1 Band1" value="135422937 909574425 48727232 190454089 47831032" />
         <ctl name="IIR1 Band2" value="135422937 806478611 131866194 558832937 247101945" />
         <ctl name="IIR1 Band3" value="135422937 815742106 131208639 560067457 261417220" />
@@ -804,7 +791,6 @@
         <ctl name="DEC8 MUX" value="DMIC2" />
         <ctl name="DEC8 Volume" value="84" />
         <ctl name="MICBIAS1 CAPLESS Switch" value="0" />
-        <ctl name="MICBIAS1 PD MODE" value="1" />
     </path>
 
     <!-- VOIP Handset -->
