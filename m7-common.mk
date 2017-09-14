@@ -154,6 +154,10 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
+# Ril
+PRODUCT_PACKAGES += \
+    libshim_ril
+
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 
