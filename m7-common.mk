@@ -158,6 +158,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_ril
 
+# Seccomp policy
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
+    $(LOCAL_PATH)/seccomp_policy/mediaextractor.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
+
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 
