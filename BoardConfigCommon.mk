@@ -47,9 +47,6 @@ TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
-# Legacy Hacks
-TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
-
 # Charger
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 
@@ -64,16 +61,10 @@ TARGET_SPECIFIC_HEADER_PATH += device/htc/m7-common/include
 # Graphics
 HAVE_ADRENO_SOURCE := false
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-TARGET_SPECIFIC_HEADER_PATH := device/htc/m7-common/include
-
-# Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80600000
-BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom user_debug=31
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom user_debug=31 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01800000
 TARGET_KERNEL_CONFIG := m7_defconfig
@@ -92,16 +83,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_PROVIDES_LIBRIL := true
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 
-# ROOT
-DEFAULT_ROOT_METHOD := magisk
-
 # SELinux
--include device/qcom/sepolicy/sepolicy.mk
+#-include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += device/htc/m7-common/sepolicy
-
-# We have the new GPS driver
-BOARD_HAVE_NEW_QC_GPS := true
+# BOARD_SEPOLICY_DIRS += device/htc/m7-common/sepolicy
 
 # Wifi
 BOARD_HOSTAPD_DRIVER             := NL80211

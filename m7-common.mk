@@ -57,9 +57,6 @@ PRODUCT_PACKAGES += \
 # Charger
 WITH_LINEAGE_CHARGER := false
 
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
 
 # GPS
 #PRODUCT_PACKAGES += \
@@ -87,10 +84,6 @@ PRODUCT_PACKAGES += \
 # Keymaster HIDL interfaces
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl
-
-# Log
-PRODUCT_PACKAGES += \
-    liblog_shim
 
 # Log
 PRODUCT_PACKAGES += \
