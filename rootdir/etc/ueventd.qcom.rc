@@ -84,11 +84,11 @@
 /dev/rfkill               0660  root         wifi
 
 #permissions for video
-/dev/msm_vidc_reg         0660  system       audio
-/dev/msm_vidc_dec         0660  system       audio
-/dev/msm_vidc_dec_sec     0660  system       audio
-/dev/msm_vidc_enc         0660  system       audio
-/dev/msm_vidc_enc_sec     0660  system       audio
+/dev/msm_vidc_reg         0660  system       camera
+/dev/msm_vidc_dec         0660  system       camera
+/dev/msm_vidc_dec_sec     0660  system       camera
+/dev/msm_vidc_enc         0660  system       camera
+/dev/msm_vidc_enc_sec     0660  system       camera
 #permissions for audio
 /dev/msm_amrnb            0660  system       audio
 /dev/msm_amrwb            0660  system       audio
