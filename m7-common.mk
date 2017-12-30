@@ -28,9 +28,7 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui
 
 # Audio Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service \
-    power.msm8960
+    android.hardware.power@1.0-service-qti
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
