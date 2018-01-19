@@ -1,28 +1,28 @@
 # Device-specific proprietary files sharing a common name
 
 # Executables
-bin/efsks
-bin/netmgrd
-bin/qcks
-bin/qmuxd
+bin/efsks:vendor/bin/efsks
+bin/netmgrd:vendor/bin/netmgrd
+bin/qcks:vendor/bin/qcks
+bin/qmuxd:vendor/bin/qmuxd
 
 # Qualcomm/HTC common libs
-lib/libdiag.so
-lib/libdsi_netctrl.so
-lib/libdsutils.so
-lib/libidl.so
-lib/libqcci_legacy.so
-lib/libqdi.so
-lib/libqdp.so
-lib/libqmi.so
-lib/libqmi_cci.so
-lib/libqmi_client_qmux.so
-lib/libqmi_common_so.so
-lib/libqmi_csi.so
-lib/libqmi_encdec.so
-lib/libqmiservices.so
+lib/libdiag.so:vendor/lib/libdiag.so
+lib/libdsi_netctrl.so:vendor/lib/libdsi_netctrl.so
+lib/libdsutils.so:vendor/lib/libdsutils.so
+lib/libidl.so:vendor/lib/libidl.so
+lib/libqcci_legacy.so:vendor/lib/libqcci_legacy.so
+lib/libqdi.so:vendor/lib/libqdi.so
+lib/libqdp.so:vendor/lib/libqdp.so
+lib/libqmi.so:vendor/lib/libqmi.so
+lib/libqmi_cci.so:vendor/lib/libqmi_cci.so
+lib/libqmi_client_qmux.so:vendor/lib/libqmi_client_qmux.so
+lib/libqmi_common_so.so:vendor/lib/libqmi_common_so.so
+lib/libqmi_csi.so:vendor/lib/libqmi_csi.so
+lib/libqmi_encdec.so:vendor/lib/libqmi_encdec.so
+lib/libqmiservices.so:vendor/lib/libqmiservices.so
 
 # Radio
-lib/libnetmgr.so
-lib/libril-qc-qmi-1.so
-lib/libril-qcril-hook-oem.so
+lib/libnetmgr.so:vendor/lib/libnetmgr.so
+lib/libril-qc-qmi-1.so:vendor/lib/libril-qc-qmi-1.so
+lib/libril-qcril-hook-oem.so:vendor/lib/libril-qcril-hook-oem.so

@@ -1,149 +1,149 @@
 # Executables
-bin/akmd
-bin/ks
-bin/mm-qcamera-daemon
-bin/mpdecision
-bin/radish
-bin/thermald
+bin/akmd:vendor/bin/akmd
+bin/ks:vendor/bin/ks
+bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
+bin/mpdecision:vendor/bin/mpdecision
+bin/radish:vendor/bin/radish
+bin/thermald:vendor/bin/thermald
 
 # Configuration files
-etc/tfa/deftcoefA_l.speaker
-etc/tfa/deftcoefA.speaker
-etc/tfa/fm.config
-etc/tfa/fm.eq
-etc/tfa/fm_l.config
-etc/tfa/fm_l.eq
-etc/tfa/fm_l.preset
-etc/tfa/fm.preset
-etc/tfa/playbackbeats.config
-etc/tfa/playbackbeats.eq
-etc/tfa/playbackbeats_l.config
-etc/tfa/playbackbeats_l.eq
-etc/tfa/playbackbeats_l.preset
-etc/tfa/playbackbeats.preset
-etc/tfa/playback.config
-etc/tfa/playback.eq
-etc/tfa/playback_l.config
-etc/tfa/playback_l.eq
-etc/tfa/playback_l.preset
-etc/tfa/playback.preset
-etc/tfa/recorder.config
-etc/tfa/recorder.eq
-etc/tfa/recorder_l.config
-etc/tfa/recorder_l.eq
-etc/tfa/recorder_l.preset
-etc/tfa/recorder.preset
-etc/tfa/ring.config
-etc/tfa/ring.eq
-etc/tfa/ring_l.config
-etc/tfa/ring_l.eq
-etc/tfa/ring_l.preset
-etc/tfa/ring.preset
-etc/tfa/tfa9887_l.patch
-etc/tfa/tfa9887_l.speaker
-etc/tfa/tfa9887.patch
-etc/tfa/tfa9887.speaker
-etc/tfa/video.config
-etc/tfa/video.eq
-etc/tfa/video_l.config
-etc/tfa/video_l.eq
-etc/tfa/video_l.preset
-etc/tfa/video.preset
-etc/tfa/voice.config
-etc/tfa/voice.eq
-etc/tfa/voice_l.config
-etc/tfa/voice_l.eq
-etc/tfa/voice_l.preset
-etc/tfa/voice.preset
-etc/tfa/voiceWB.eq
-etc/tfa/voiceWB_l.eq
-etc/tfa/voip.config
-etc/tfa/voip.eq
-etc/tfa/voip_l.config
-etc/tfa/voip_l.eq
-etc/tfa/voip_l.preset
-etc/tfa/voip.preset
-etc/agps_rm
-etc/hldm.bin
-etc/hltof.bin
-etc/hltrd.bin
+etc/tfa/deftcoefA_l.speaker:vendor/etc/tfa/deftcoefA_l.speaker
+etc/tfa/deftcoefA.speaker:vendor/etc/tfa/deftcoefA.speaker
+etc/tfa/fm.config:vendor/etc/tfa/fm.config
+etc/tfa/fm.eq:vendor/etc/tfa/fm.eq
+etc/tfa/fm_l.config:vendor/etc/tfa/fm_l.config
+etc/tfa/fm_l.eq:vendor/etc/tfa/fm_l.eq
+etc/tfa/fm_l.preset:vendor/etc/tfa/fm_l.preset
+etc/tfa/fm.preset:vendor/etc/tfa/fm.preset
+etc/tfa/playbackbeats.config:vendor/etc/tfa/playbackbeats.config
+etc/tfa/playbackbeats.eq:vendor/etc/tfa/playbackbeats.eq
+etc/tfa/playbackbeats_l.config:vendor/etc/tfa/playbackbeats_l.config
+etc/tfa/playbackbeats_l.eq:vendor/etc/tfa/playbackbeats_l.eq
+etc/tfa/playbackbeats_l.preset:vendor/etc/tfa/playbackbeats_l.preset
+etc/tfa/playbackbeats.preset:vendor/etc/tfa/playbackbeats.preset
+etc/tfa/playback.config:vendor/etc/tfa/playback.config
+etc/tfa/playback.eq:vendor/etc/tfa/playback.eq
+etc/tfa/playback_l.config:vendor/etc/tfa/playback_l.config
+etc/tfa/playback_l.eq:vendor/etc/tfa/playback_l.eq
+etc/tfa/playback_l.preset:vendor/etc/tfa/playback_l.preset
+etc/tfa/playback.preset:vendor/etc/tfa/playback.preset
+etc/tfa/recorder.config:vendor/etc/tfa/recorder.config
+etc/tfa/recorder.eq:vendor/etc/tfa/recorder.eq
+etc/tfa/recorder_l.config:vendor/etc/tfa/recorder_l.config
+etc/tfa/recorder_l.eq:vendor/etc/tfa/recorder_l.eq
+etc/tfa/recorder_l.preset:vendor/etc/tfa/recorder_l.preset
+etc/tfa/recorder.preset:vendor/etc/tfa/recorder.preset
+etc/tfa/ring.config:vendor/etc/tfa/ring.config
+etc/tfa/ring.eq:vendor/etc/tfa/ring.eq
+etc/tfa/ring_l.config:vendor/etc/tfa/ring_l.config
+etc/tfa/ring_l.eq:vendor/etc/tfa/ring_l.eq
+etc/tfa/ring_l.preset:vendor/etc/tfa/ring_l.preset
+etc/tfa/ring.preset:vendor/etc/tfa/ring.preset
+etc/tfa/tfa9887_l.patch:vendor/etc/tfa/tfa9887_l.patch
+etc/tfa/tfa9887_l.speaker:vendor/etc/tfa/tfa9887_l.speaker
+etc/tfa/tfa9887.patch:vendor/etc/tfa/tfa9887.patch
+etc/tfa/tfa9887.speaker:vendor/etc/tfa/tfa9887.speaker
+etc/tfa/video.config:vendor/etc/tfa/video.config
+etc/tfa/video.eq:vendor/etc/tfa/video.eq
+etc/tfa/video_l.config:vendor/etc/tfa/video_l.config
+etc/tfa/video_l.eq:vendor/etc/tfa/video_l.eq
+etc/tfa/video_l.preset:vendor/etc/tfa/video_l.preset
+etc/tfa/video.preset:vendor/etc/tfa/video.preset
+etc/tfa/voice.config:vendor/etc/tfa/voice.config
+etc/tfa/voice.eq:vendor/etc/tfa/voice.eq
+etc/tfa/voice_l.config:vendor/etc/tfa/voice_l.config
+etc/tfa/voice_l.eq:vendor/etc/tfa/voice_l.eq
+etc/tfa/voice_l.preset:vendor/etc/tfa/voice_l.preset
+etc/tfa/voice.preset:vendor/etc/tfa/voice.preset
+etc/tfa/voiceWB.eq:vendor/etc/tfa/voiceWB.eq
+etc/tfa/voiceWB_l.eq:vendor/etc/tfa/voiceWB_l.eq
+etc/tfa/voip.config:vendor/etc/tfa/voip.config
+etc/tfa/voip.eq:vendor/etc/tfa/voip.eq
+etc/tfa/voip_l.config:vendor/etc/tfa/voip_l.config
+etc/tfa/voip_l.eq:vendor/etc/tfa/voip_l.eq
+etc/tfa/voip_l.preset:vendor/etc/tfa/voip_l.preset
+etc/tfa/voip.preset:vendor/etc/tfa/voip.preset
+etc/agps_rm:vendor/etc/agps_rm
+etc/hldm.bin:vendor/etc/hldm.bin
+etc/hltof.bin:vendor/etc/hltof.bin
+etc/hltrd.bin:vendor/etc/hltrd.bin
 
 # Audio
-lib/libacdbloader.so
-lib/libaudcal.so
-lib/libcsd-client.so
+lib/libacdbloader.so:vendor/lib/libacdbloader.so
+lib/libaudcal.so:vendor/lib/libaudcal.so
+lib/libcsd-client.so:vendor/lib/libcsd-client.so
 
 # Camera
-lib/hw/camera.vendor.msm8960.so
-lib/libBeautyChat.so
-lib/libcameraasd.so
-lib/libcameraface.so
-lib/libcamerapp.so
-lib/libcam_oem_plugin.so
-lib/libchromatix_ar0260_default_video.so
-lib/libchromatix_ar0260_hdr.so
-lib/libchromatix_ar0260_preview.so
-lib/libchromatix_ar0260_zsl.so
-lib/libchromatix_imx135_default_video.so
-lib/libchromatix_imx135_hdr.so
-lib/libchromatix_imx135_hfr.so
-lib/libchromatix_imx135_preview.so
-lib/libchromatix_imx135_zsl.so
-lib/libchromatix_imx175_default_video.so
-lib/libchromatix_imx175_hdr.so
-lib/libchromatix_imx175_hfr.so
-lib/libchromatix_imx175_preview.so
-lib/libchromatix_imx175_zsl.so
-lib/libchromatix_ov2722_default_video.so
-lib/libchromatix_ov2722_hdr.so
-lib/libchromatix_ov2722_preview.so
-lib/libchromatix_ov2722_zsl.so
-lib/libchromatix_ov4688_default_video.so
-lib/libchromatix_ov4688_hdr.so
-lib/libchromatix_ov4688_hfr.so
-lib/libchromatix_ov4688_hfr_60fps.so
-lib/libchromatix_ov4688_night.so
-lib/libchromatix_ov4688_preview.so
-lib/libchromatix_ov4688_video_hdr.so
-lib/libchromatix_ov4688_zoe.so
-lib/libchromatix_ov4688_zsl.so
-lib/libchromatix_vd6869_default_video.so
-lib/libchromatix_vd6869_hdr.so
-lib/libchromatix_vd6869_hfr.so
-lib/libchromatix_vd6869_hfr_60fps.so
-lib/libchromatix_vd6869_night.so
-lib/libchromatix_vd6869_preview.so
-lib/libchromatix_vd6869_video_hdr.so
-lib/libchromatix_vd6869_zoe.so
-lib/libchromatix_vd6869_zsl.so
-lib/libgemini.so
-lib/libhtccamera_yushaniiproc.so
-lib/libHTC_DIS.so
-lib/libimage-jpeg-dec-omx-comp.so
-lib/libimage-jpeg-enc-omx-comp.so
-lib/libimage-omx-common.so
-lib/libmm-abl.so
-lib/libmm-abl-oem.so
-lib/libmmcamera_aec.so
-lib/libmmcamera_faceproc.so
-lib/libmmcamera_frameproc.so
-lib/libmmcamera_hdr_lib.so
-lib/libmmcamera_image_stab.so
-lib/libmmcamera_interface2.so
-lib/libmmcamera_rawchipproc.so
-lib/libmmcamera_rubik.so
-lib/libmmcamera_statsproc31.so
-lib/libmmcamera_wavelet_lib.so
-lib/libmmipl.so
-lib/libmmjpeg.so
-lib/libmmstillomx.so
-lib/liboemcamera.so
-lib/libposteffect.so
-lib/libwriteback.so
+lib/hw/camera.vendor.msm8960.so:vendor/lib/hw/camera.vendor.msm8960.so
+lib/libBeautyChat.so:vendor/lib/libBeautyChat.so
+lib/libcameraasd.so:vendor/lib/libcameraasd.so
+lib/libcameraface.so:vendor/lib/libcameraface.so
+lib/libcamerapp.so:vendor/lib/libcamerapp.so
+lib/libcam_oem_plugin.so:vendor/lib/libcam_oem_plugin.so
+lib/libchromatix_ar0260_default_video.so:vendor/lib/libchromatix_ar0260_default_video.so
+lib/libchromatix_ar0260_hdr.so:vendor/lib/libchromatix_ar0260_hdr.so
+lib/libchromatix_ar0260_preview.so:vendor/lib/libchromatix_ar0260_preview.so
+lib/libchromatix_ar0260_zsl.so:vendor/lib/libchromatix_ar0260_zsl.so
+lib/libchromatix_imx135_default_video.so:vendor/lib/libchromatix_imx135_default_video.so
+lib/libchromatix_imx135_hdr.so:vendor/lib/libchromatix_imx135_hdr.so
+lib/libchromatix_imx135_hfr.so:vendor/lib/libchromatix_imx135_hfr.so
+lib/libchromatix_imx135_preview.so:vendor/lib/libchromatix_imx135_preview.so
+lib/libchromatix_imx135_zsl.so:vendor/lib/libchromatix_imx135_zsl.so
+lib/libchromatix_imx175_default_video.so:vendor/lib/libchromatix_imx175_default_video.so
+lib/libchromatix_imx175_hdr.so:vendor/lib/libchromatix_imx175_hdr.so
+lib/libchromatix_imx175_hfr.so:vendor/lib/libchromatix_imx175_hfr.so
+lib/libchromatix_imx175_preview.so:vendor/lib/libchromatix_imx175_preview.so
+lib/libchromatix_imx175_zsl.so:vendor/lib/libchromatix_imx175_zsl.so
+lib/libchromatix_ov2722_default_video.so:vendor/lib/libchromatix_ov2722_default_video.so
+lib/libchromatix_ov2722_hdr.so:vendor/lib/libchromatix_ov2722_hdr.so
+lib/libchromatix_ov2722_preview.so:vendor/lib/libchromatix_ov2722_preview.so
+lib/libchromatix_ov2722_zsl.so:vendor/lib/libchromatix_ov2722_zsl.so
+lib/libchromatix_ov4688_default_video.so:vendor/lib/libchromatix_ov4688_default_video.so
+lib/libchromatix_ov4688_hdr.so:vendor/lib/libchromatix_ov4688_hdr.so
+lib/libchromatix_ov4688_hfr.so:vendor/lib/libchromatix_ov4688_hfr.so
+lib/libchromatix_ov4688_hfr_60fps.so:vendor/lib/libchromatix_ov4688_hfr_60fps.so
+lib/libchromatix_ov4688_night.so:vendor/lib/libchromatix_ov4688_night.so
+lib/libchromatix_ov4688_preview.so:vendor/lib/libchromatix_ov4688_preview.so
+lib/libchromatix_ov4688_video_hdr.so:vendor/lib/libchromatix_ov4688_video_hdr.so
+lib/libchromatix_ov4688_zoe.so:vendor/lib/libchromatix_ov4688_zoe.so
+lib/libchromatix_ov4688_zsl.so:vendor/lib/libchromatix_ov4688_zsl.so
+lib/libchromatix_vd6869_default_video.so:vendor/lib/libchromatix_vd6869_default_video.so
+lib/libchromatix_vd6869_hdr.so:vendor/lib/libchromatix_vd6869_hdr.so
+lib/libchromatix_vd6869_hfr.so:vendor/lib/libchromatix_vd6869_hfr.so
+lib/libchromatix_vd6869_hfr_60fps.so:vendor/lib/libchromatix_vd6869_hfr_60fps.so
+lib/libchromatix_vd6869_night.so:vendor/lib/libchromatix_vd6869_night.so
+lib/libchromatix_vd6869_preview.so:vendor/lib/libchromatix_vd6869_preview.so
+lib/libchromatix_vd6869_video_hdr.so:vendor/lib/libchromatix_vd6869_video_hdr.so
+lib/libchromatix_vd6869_zoe.so:vendor/lib/libchromatix_vd6869_zoe.so
+lib/libchromatix_vd6869_zsl.so:vendor/lib/libchromatix_vd6869_zsl.so
+lib/libgemini.so:vendor/lib/libgemini.so
+lib/libhtccamera_yushaniiproc.so:vendor/lib/libhtccamera_yushaniiproc.so
+lib/libHTC_DIS.so:vendor/lib/libHTC_DIS.so
+lib/libimage-jpeg-dec-omx-comp.so:vendor/lib/libimage-jpeg-dec-omx-comp.so
+lib/libimage-jpeg-enc-omx-comp.so:vendor/lib/libimage-jpeg-enc-omx-comp.so
+lib/libimage-omx-common.so:vendor/lib/libimage-omx-common.so
+lib/libmm-abl.so:vendor/lib/libmm-abl.so
+lib/libmm-abl-oem.so:vendor/lib/libmm-abl-oem.so
+lib/libmmcamera_aec.so:vendor/lib/libmmcamera_aec.so
+lib/libmmcamera_faceproc.so:vendor/lib/libmmcamera_faceproc.so
+lib/libmmcamera_frameproc.so:vendor/lib/libmmcamera_frameproc.so
+lib/libmmcamera_hdr_lib.so:vendor/lib/libmmcamera_hdr_lib.so
+lib/libmmcamera_image_stab.so:vendor/lib/libmmcamera_image_stab.so
+lib/libmmcamera_interface2.so:vendor/lib/libmmcamera_interface2.so
+lib/libmmcamera_rawchipproc.so:vendor/lib/libmmcamera_rawchipproc.so
+lib/libmmcamera_rubik.so:vendor/lib/libmmcamera_rubik.so
+lib/libmmcamera_statsproc31.so:vendor/lib/libmmcamera_statsproc31.so
+lib/libmmcamera_wavelet_lib.so:vendor/lib/libmmcamera_wavelet_lib.so
+lib/libmmipl.so:vendor/lib/libmmipl.so
+lib/libmmjpeg.so:vendor/lib/libmmjpeg.so
+lib/libmmstillomx.so:vendor/lib/libmmstillomx.so
+lib/liboemcamera.so:vendor/lib/liboemcamera.so
+lib/libposteffect.so:vendor/lib/libposteffect.so
+lib/libwriteback.so:vendor/lib/libwriteback.so
 
 # Camera firmware
-etc/firmware/ILP0100_IPM_Code_out.bin
-etc/firmware/ILP0100_IPM_Data_out.bin
+etc/firmware/ILP0100_IPM_Code_out.bin:vendor/etc/firmware/ILP0100_IPM_Code_out.bin
+etc/firmware/ILP0100_IPM_Data_out.bin:vendor/etc/firmware/ILP0100_IPM_Data_out.bin
 
 # DRM
 bin/qseecomd
@@ -153,8 +153,8 @@ vendor/lib/libdrmtime.so
 vendor/lib/libQSEEComAPI.so
 
 # GPS
-lib/libgeofence.so
-lib/libloc_api_v02.so
+lib/libgeofence.so:vendor/lib/libgeofence.so
+lib/libloc_api_v02.so:vendor/lib/libloc_api_v02.so
 
 # Graphics
 vendor/lib/egl/eglsubAndroid.so
@@ -176,19 +176,19 @@ vendor/lib/libsc-a3xx.so
 vendor/lib/libuiblur.so
 
 # Graphics firmware
-etc/firmware/a300_pfp.fw
-etc/firmware/a300_pm4.fw
-etc/firmware/vidc.b00
-etc/firmware/vidc.b01
-etc/firmware/vidc.b02
-etc/firmware/vidc.b03
-etc/firmware/vidc.mdt
-etc/firmware/vidc_1080p.fw
+etc/firmware/a300_pfp.fw:vendor/etc/firmware/a300_pfp.fw:
+etc/firmware/a300_pm4.fw:vendor/etc/firmware/a300_pm4.fw
+etc/firmware/vidc.b00:vendor/etc/firmware/vidc.b00
+etc/firmware/vidc.b01:vendor/etc/firmware/vidc.b01
+etc/firmware/vidc.b02:vendor/etc/firmware/vidc.b02
+etc/firmware/vidc.b03:vendor/etc/firmware/vidc.b03
+etc/firmware/vidc.mdt:vendor/etc/firmware/vidc.mdt
+etc/firmware/vidc_1080p.fw:vendor/etc/firmware/vidc_1080p.fw
 
 # Irda
-bin/cir_fw_update
-etc/cir.img
-lib/hw/consumerir.default.so
+bin/cir_fw_update:vendor/bin/cir_fw_update
+etc/cir.img:/vendor/etc/cir.img
+lib/hw/consumerir.default.so:vendor/lib/hw/consumerir.default.so
 
 # Keystore
 vendor/firmware/keymaster/keymaster.b00
@@ -198,27 +198,27 @@ vendor/firmware/keymaster/keymaster.b03
 vendor/firmware/keymaster/keymaster.mdt
 
 # Media
-lib/libI420colorconvert.so
-lib/libmm-color-convertor.so
+lib/libI420colorconvert.so:vendor/lib/libI420colorconvert.so
+lib/libmm-color-convertor.so:vendor/lib/libmm-color-convertor.so
 
 # Modem firmware
-etc/firmware/hcheck.b00
-etc/firmware/hcheck.b01
-etc/firmware/hcheck.b02
-etc/firmware/hcheck.b03
-etc/firmware/hcheck.mdt
-etc/firmware/lscbuffer_rev2.bin
+etc/firmware/hcheck.b00:vendor/etc/firmware/hcheck.b00
+etc/firmware/hcheck.b01:vendor/etc/firmware/hcheck.b01
+etc/firmware/hcheck.b02:vendor/etc/firmware/hcheck.b02
+etc/firmware/hcheck.b03:vendor/etc/firmware/hcheck.b03
+etc/firmware/hcheck.mdt:vendor/etc/firmware/hcheck.mdt
+etc/firmware/lscbuffer_rev2.bin:vendor/etc/firmware/lscbuffer_rev2.bin
 
 # Qualcomm extra
 vendor/lib/libqc-opt.so
 
 # Sensors
-lib/hw/sensors.default.so
-lib/libimu.so
-lib/libmllite.so
-lib/libmlplatform.so
-lib/libmpl.so
-lib/libmpl_jni.so
+lib/hw/sensors.default.so:vendor/lib/hw/sensors.default.so
+lib/libimu.so:vendor/lib/libimu.so
+lib/libmllite.so:vendor/lib/libmllite.so
+lib/libmlplatform.so:vendor/lib/libmlplatform.so
+lib/libmpl.so:vendor/lib/libmpl.so
+lib/libmpl_jni.so:vendor/lib/libmpl_jni.so
 
 # Widevine
 vendor/lib/drm/libdrmwvmplugin.so
@@ -228,18 +228,18 @@ vendor/lib/libWVStreamControlAPI_L1.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
 # Widevine firmware
-etc/firmware/widevine.b00
-etc/firmware/widevine.b01
-etc/firmware/widevine.b02
-etc/firmware/widevine.b03
-etc/firmware/widevine.mdt
-etc/firmware/tzapps.b00
-etc/firmware/tzapps.b01
-etc/firmware/tzapps.b02
-etc/firmware/tzapps.b03
-etc/firmware/tzapps.mdt
+etc/firmware/widevine.b00:vendor/etc/firmware/widevine.b00
+etc/firmware/widevine.b01:vendor/etc/firmware/widevine.b01
+etc/firmware/widevine.b02:vendor/etc/firmware/widevine.b02
+etc/firmware/widevine.b03:vendor/etc/firmware/widevine.b03
+etc/firmware/widevine.mdt:vendor/etc/firmware/widevine.mdt
+etc/firmware/tzapps.b00:vendor/etc/firmware/tzapps.b00
+etc/firmware/tzapps.b01:vendor/etc/firmware/tzapps.b01
+etc/firmware/tzapps.b02:vendor/etc/firmware/tzapps.b02
+etc/firmware/tzapps.b03:vendor/etc/firmware/tzapps.b03
+etc/firmware/tzapps.mdt:vendor/etc/firmware/tzapps.mdt
 
 # WLAN firmware
-etc/firmware/fw_bcm4335_apsta_b0.bin
-etc/firmware/fw_bcm4335_b0.bin
-etc/firmware/fw_bcm4335_p2p_b0.bin
+etc/firmware/fw_bcm4335_apsta_b0.bin:vendor/etc/firmware/fw_bcm4335_apsta_b0.bin
+etc/firmware/fw_bcm4335_b0.bin:vendor/etc/firmware/fw_bcm4335_b0.bin
+etc/firmware/fw_bcm4335_p2p_b0.bin:vendor/etc/firmware/fw_bcm4335_p2p_b0.bin
