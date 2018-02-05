@@ -412,6 +412,11 @@ service thermal-engine /vendor/bin/thermal-engine
     user root
     group root
 
+service time_daemon /vendor/bin/time_daemon
+    class late_start
+    user root
+    group root
+
 # WiFi
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface \
