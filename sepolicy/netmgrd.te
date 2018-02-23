@@ -1,2 +1,9 @@
 allow netmgrd self:capability dac_override;
-allow netmgrd self:packet_socket create_socket_perms;
+allow netmgrd shell_exec:file { execute execute_no_trans getattr open read };
+allow netmgrd toolbox_exec:file rx_file_perms;
+allow netmgrd toolbox_exec:file { execute execute_no_trans getattr open read };
+allow netmgrd system_file:file rx_file_perms;
+allow netmgrd vendor_file_type:file rx_file_perms;
+allow netmgrd system_file:file lock;
+
+allow netmgrd netmgrd:netlink_route_socket { read };

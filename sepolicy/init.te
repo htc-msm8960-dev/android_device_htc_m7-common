@@ -1,3 +1,20 @@
-allow init camera_sysfs:file rw_file_perms;
-allow init debugfs:file write;
+allow init self:netlink_socket { bind create write };
+allow init self:udp_socket ioctl;
+allow init self:netlink_route_socket { bind create read };
+allow init self:netlink_kobject_uevent_socket read;
+
+allow init device_latency:chr_file w_file_perms;
+allow init hsic_device:chr_file w_file_perms;
+
+allow init qmuxd_socket:sock_file w_file_perms;
+
+allow init vendor_file:file execmod;
+allow init debugfs_trace_marker:file getattr;
+allow init debugfs:file w_file_perms;
 allow init vibeamp_sysfs:file rw_file_perms;
+
+allow init ion_device:chr_file { read open ioctl };
+allow init video_device:chr_file { read open ioctl };
+
+allow init { domain -lmkd -crash_dump }:process noatsecure;
+
