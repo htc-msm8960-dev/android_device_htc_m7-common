@@ -17,6 +17,8 @@
 #ifndef _TFA9887_H_
 #define _TFA9887_H_
 
+#include <pthread.h>
+#include <stdbool.h>
 #include <stdint.h>
 
 #define TFA9887_DEVICE "/dev/tfa9887"

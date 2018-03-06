@@ -14,6 +14,12 @@
 
 LOCAL_PATH := $(call my-dir)
 
+ifeq ($(BOARD_VENDOR),htc)
+ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
+include $(call all-subdir-makefiles,$(LOCAL_PATH))
+endif
+endif
+
 ifneq ($(filter m7 m7att m7spr m7tmo m7ul m7vzw,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
