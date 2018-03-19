@@ -1,24 +1,16 @@
+
 [{
-	"branch": "c7.1.2",
-	"repository": "CandyDevices/device_htc_msm8960-common",
-	"target_path": "device/htc/msm8960-common"
-}, {
-	"branch": "cm-14.1",
-	"repository": "CyanogenMod/android_external_stlport",
+	"branch": "lineage-15.1",
+	"repository": "Lineage/android_external_stlport",
 	"target_path": "external/stlport",
 	"remote": "github"
 }, {
-	"branch": "cm-14.1",
-	"repository": "CyanogenMod/android_external_sony_boringssl-compat",
+	"branch": "lineage-15.1",
+	"repository": "Lineage/android_external_sony_boringssl-compat",
 	"target_path": "external/sony/boringssl-compat",
 	"remote": "github"
 }, {
-	"branch": "c7.1.2",
-	"repository": "CandyDevices/proprietary_vendor_htc",
-	"target_path": "vendor/htc",
-	"remote": "github"
-}, {
-	"branch": "c7.1.2",
+	"branch": "c8.1",
 	"repository": "CandyDevices/kernel_htc_msm8960",
 	"target_path": "kernel/htc/msm8960"
 }]
