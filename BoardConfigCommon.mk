@@ -140,9 +140,9 @@ BOARD_RIL_CLASS := ../../../$(PLATFORM_PATH)/ril/
 TARGET_RIL_VARIANT := caf
 
 # SELinux
-#BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
-#-include device/qcom/sepolicy/sepolicy.mk
-#-include device/qcom/sepolicy/legacy-sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
+-include device/qcom/sepolicy/sepolicy.mk
+-include device/qcom/sepolicy/legacy-sepolicy.mk
 
 # USB
 TARGET_USES_LEGACY_ADB_INTERFACE := true
