@@ -170,9 +170,6 @@ endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
-# Permissions
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/permissions.mk
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -206,6 +203,7 @@ PRODUCT_PACKAGES += \
 
 # System properties & permissions
 -include $(LOCAL_PATH)/system_prop.mk
+-include $(LOCAL_PATH)/permissions.mk
 
 # Thermal
 PRODUCT_COPY_FILES += \
