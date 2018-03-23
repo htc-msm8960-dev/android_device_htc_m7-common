@@ -30,7 +30,7 @@
 #ifndef LOC_ENG_NMEA_H
 #define LOC_ENG_NMEA_H
 
-#include <hardware/gps.h>
+#include "gps.h"
 
 #define NMEA_SENTENCE_MAX_LENGTH 200
 
