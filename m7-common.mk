@@ -152,6 +152,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermald.conf:system/etc/thermald.conf
 
+# USB debugging at boot
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    ro.debuggable=1 \
+    persist.sys.usb.config=mtp,adb \
+    persist.service.adb.enable=1
+
 # Voice processing
 PRODUCT_PACKAGES += \
     libqcomvoiceprocessing
