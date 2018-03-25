@@ -25,7 +25,7 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
-PLATFORM_PATH := device/htc/m7-common
+DEVICE_PATH := device/htc/m7-common
 
 BOARD_VENDOR := htc
 
@@ -37,8 +37,8 @@ USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
-BOARD_CUSTOM_BT_CONFIG := $(PLATFORM_PATH)/bluetooth/libbt_vndcfg.txt
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/libbt_vndcfg.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
 BOARD_HAVE_BLUETOOTH_BCM := true
 
@@ -79,7 +79,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776704
 
 # General compilation flags
-TARGET_SPECIFIC_HEADER_PATH += $(PLATFORM_PATH)/include
+TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 
 # Graphics
 HAVE_ADRENO_SOURCE := false
@@ -110,7 +110,7 @@ TARGET_KERNEL_SOURCE := kernel/htc/msm8960
 TARGET_PROVIDES_LIBLIGHT := true
 
 # LINEAGEHW
-BOARD_HARDWARE_CLASS := $(PLATFORM_PATH)/lineagehw
+BOARD_HARDWARE_CLASS := $(DEVICE_PATH)/lineagehw
 
 # NFC
 BOARD_NFC_HAL_SUFFIX := msm8960
@@ -132,18 +132,18 @@ BOARD_GLOBAL_CFLAGS := -DBOARD_RECOVERY_BLDRMSG_OFFSET=2048
 BOARD_NO_SECURE_DISCARD := true
 TARGET_RECOVERY_DEVICE_DIRS += device/htc/m7-common
 TARGET_RECOVERY_DEVICE_MODULES += chargeled
-TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 #TARGET_USERIMAGES_USE_F2FS := true
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
-BOARD_RIL_CLASS := ../../../$(PLATFORM_PATH)/ril/
+BOARD_RIL_CLASS := ../../../$(DEVICE_PATH)/ril/
 TARGET_RIL_VARIANT := caf
 
 # SELinux
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 -include device/qcom/sepolicy/sepolicy.mk
 -include device/qcom/sepolicy/legacy-sepolicy.mk
 
