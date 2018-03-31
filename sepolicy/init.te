@@ -2,7 +2,7 @@ allow init self:netlink_socket { bind create write };
 allow init self:udp_socket ioctl;
 allow init self:netlink_route_socket { bind create read };
 allow init self:netlink_kobject_uevent_socket read;
-
+allow init shell_exec:file { execute open read };
 allow init device_latency:chr_file w_file_perms;
 allow init hsic_device:chr_file w_file_perms;
 
