@@ -150,8 +150,6 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0-impl \
-    android.hardware.nfc@1.0-service \
     com.android.nfc_extras \
     libnfc \
     libnfc_jni \
@@ -159,6 +157,8 @@ PRODUCT_PACKAGES += \
     nfc.msm8960 \
     Tag \
     Nfc
+#    android.hardware.nfc@1.0-impl \
+#    android.hardware.nfc@1.0-service \
 
 ifeq ($(TARGET_BUILD_VARIANT),user)
     NFCEE_ACCESS_PATH := $(LOCAL_PATH)/configs/nfcee_access.xml

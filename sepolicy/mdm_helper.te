@@ -9,5 +9,3 @@ allow mdm_helper proc:file r_file_perms;
 allow mdm_helper vfat:file { getattr open read };
 allow mdm_helper sysfs:file getattr;
 set_prop(mdm_helper, radio_prop)
-
-
