@@ -98,6 +98,7 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
 
 # Kernel
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 BOARD_KERNEL_BASE := 0x80600000
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom user_debug=31 androidboot.selinux=permissive
