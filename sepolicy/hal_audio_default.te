@@ -1,0 +1,1 @@
+allow audioserver qmuxd:unix_stream_socket connectto;
