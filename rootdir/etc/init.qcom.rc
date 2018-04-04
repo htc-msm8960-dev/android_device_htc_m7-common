@@ -3,8 +3,18 @@ import init.target.rc
 import init.qcom.usb.rc
 
 on early-init
-    mount_all ./fstab.qcom
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
+    symlink /data/tombstones /tombstones
+
+    # For firmwares
+    mkdir /firmware 0771 system system
+    mkdir /vendor 0771 system system
+    mkdir /vendor/firmware 0771 system system
+    mkdir /firmware/mdm 0771 system system
+    mkdir /firmware/q6 0771 system system  
+
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
+
     chown system system /sys/kernel/debug/kgsl/proc
 
 on init
