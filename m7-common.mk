@@ -36,11 +36,14 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-impl \
     android.hardware.soundtrigger@2.0-impl \
     android.hardware.broadcastradio@1.0-impl \
+    audio_amplifier.msm8960 \
     audio.a2dp.default \
     audio.primary.msm8960 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
     tinymix
 
 # Bluetooth
@@ -50,7 +53,6 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
 # Camera HIDL interfaces
@@ -66,17 +68,16 @@ WITH_LINEAGE_CHARGER := false
 
 # Display
 PRODUCT_PACKAGES += \
+    libhwc2on1adapter \
     android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
     copybit.msm8960 \
     gralloc.msm8960 \
     hwcomposer.msm8960 \
     libgenlock \
+    liboverlay \
     memtrack.msm8960
 
 # DRM
@@ -101,7 +102,9 @@ PRODUCT_COPY_FILES += \
 # IPv6 tethering
 PRODUCT_PACKAGES += \
     ebtables \
-    ethertypes
+    ethertypes \
+    libxml2 \
+    libcnefeatureconfig
 
 # Ir
 PRODUCT_PACKAGES += \
@@ -122,7 +125,6 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service \
     lights.msm8960
 
 # Media
@@ -151,14 +153,13 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
+    android.hardware.nfc@1.0-impl \
     libnfc \
     libnfc_jni \
     libnfc_ndef \
     nfc.msm8960 \
     Tag \
     Nfc
-#    android.hardware.nfc@1.0-impl \
-#    android.hardware.nfc@1.0-service \
 
 ifeq ($(TARGET_BUILD_VARIANT),user)
     NFCEE_ACCESS_PATH := $(LOCAL_PATH)/configs/nfcee_access.xml
@@ -167,6 +168,11 @@ else
 endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl \
+    power.msm8960
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -180,6 +186,9 @@ PRODUCT_PACKAGES += \
 # Renderscript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
+
+# SDCard
+PRODUCT_CHARACTERISTICS := nosdcard
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
@@ -204,21 +213,12 @@ PRODUCT_PACKAGES += \
 -include $(LOCAL_PATH)/permissions.mk
 
 # Thermal
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermald.conf:system/etc/thermald.conf
-
-# USB debugging at boot
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.secure=0 \
-    ro.adb.secure=0 \
-    ro.debuggable=1 \
-    persist.sys.usb.config=mtp,adb \
-    persist.service.adb.enable=1
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl
 
 # Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl \
-    android.hardware.thermal@1.0-service
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermald.conf:system/etc/thermald.conf
 
 # Usb
 PRODUCT_PACKAGES += \
@@ -235,13 +235,13 @@ PRODUCT_PACKAGES += \
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
+    libnetcmdiface \
     hostapd \
-    hostapd.accept \
-    hostapd.deny \
-    hostapd_default.conf \
-    wificond \
     wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant.conf \
+    libwifi-hal-bcm \
+    libwpa_client \
+    wificond
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/calibration:system/etc/calibration \
