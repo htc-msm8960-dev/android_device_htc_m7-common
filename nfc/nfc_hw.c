@@ -15,6 +15,8 @@
  */
 #include <errno.h>
 #include <string.h>
+#include <stdlib.h>
+#include <malloc.h>
 
 #include <hardware/hardware.h>
 #include <hardware/nfc.h>
