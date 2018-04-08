@@ -20,8 +20,6 @@ on early-init
 on init
     export LD_PRELOAD libshim_atomic.so
 
-    export LD_SHIM_LIBS "/system/vendor/lib/hw/camera.vendor.msm8960.so|libcamera_shim.so:/system/vendor/lib/libqc-opt.so|libqc-opt_shim.so:/system/lib/liblog.so|liblog_shim.so:/system/vendor/lib/libwvm.so|libshim_wvm.so:/system/vendor/lib/libril.so|libshim_ril.so:/system/vendor/lib/libril-qc-qmi-1.so|libshim_ril.so"
-
     # Set permissions for persist partition
     mkdir /persist 0771 system system  
 

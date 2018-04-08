@@ -15,6 +15,3 @@ allow init vibeamp_sysfs:file rw_file_perms;
 
 allow init ion_device:chr_file { read open ioctl };
 allow init video_device:chr_file { read open ioctl };
-
-allow init { domain -lmkd -crash_dump }:process noatsecure;
-
