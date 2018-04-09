@@ -1,5 +1,4 @@
 qmux_socket(mediaserver)
-
 allow mediaserver vendor_file:file execmod;
 allow mediaserver system_file:file execmod;
 

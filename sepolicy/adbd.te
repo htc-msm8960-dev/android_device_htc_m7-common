@@ -9,3 +9,4 @@ allow adbd sensors_exec:file r_file_perms;
 allow adbd tee_exec:file r_file_perms;
 allow adbd thermal-engine_exec:file r_file_perms;
 allow adbd time_daemon_exec:file r_file_perms;
+allow adbd sysfs:file { getattr open read };

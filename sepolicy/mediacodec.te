@@ -1,6 +1,6 @@
 allow mediacodec camera_prop:file { getattr open read };
 allow mediacodec system_server:fifo_file { append write };
-
+allow mediacodec sysfs:file { getattr open read };
 binder_use(mediacodec)
 binder_service(mediacodec)
 add_service(mediacodec, mediacodec_service)
