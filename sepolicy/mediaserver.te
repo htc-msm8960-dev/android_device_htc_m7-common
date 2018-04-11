@@ -1,7 +1,6 @@
 qmux_socket(mediaserver)
 allow mediaserver vendor_file:file execmod;
 allow mediaserver system_file:file execmod;
-
 allow mediaserver hal_camera_default:binder { call transfer };
 
 allow mediaserver self:netlink_kobject_uevent_socket { bind create getopt read setopt };

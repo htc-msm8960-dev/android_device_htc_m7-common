@@ -20,3 +20,4 @@ allow init self:netlink_socket read;
 allow init socket_device:sock_file { create setattr };
 allow init system_data_file:file append;
 allow init video_device:chr_file write;
+allow init self:udp_socket ioctl;
