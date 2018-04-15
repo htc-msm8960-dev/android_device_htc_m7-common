@@ -104,6 +104,7 @@ BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib/hw/camera.vendor.msm8960.so|libcamera_shim.so \
     /system/vendor/lib/libqc-opt.so|libqc-opt_shim.so \
     /system/lib/liblog.so|liblog_shim.so \
     /system/vendor/lib/libwvm.so|libshim_wvm.so \
