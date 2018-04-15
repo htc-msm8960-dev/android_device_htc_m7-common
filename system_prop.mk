@@ -41,10 +41,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
 
-# OMX properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.media.treble_omx=false
-
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.baseband.arch=mdm \
