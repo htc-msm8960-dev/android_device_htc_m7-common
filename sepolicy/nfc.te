@@ -1,4 +1,0 @@
-allow nfc media_rw_data_file:dir create_dir_perms;
-allow nfc media_rw_data_file:file create_file_perms;
-allow nfc sysfs:dir { open read };
-

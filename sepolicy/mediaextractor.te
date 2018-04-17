@@ -1,3 +1,0 @@
-allow mediaextractor sysfs:file { getattr open read };
-allow mediaextractor system_server:fifo_file w_file_perms;
-allow mediaextractor sdcardfs:file { getattr read };

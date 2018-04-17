@@ -1,2 +1,0 @@
-allow hal_audio_default sysfs:file { getattr open read };
-allow audioserver qmuxd:unix_stream_socket connectto;

@@ -1,13 +1,7 @@
-type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket0";
-
 allow mm-qcamerad camera_device:chr_file rw_file_perms;
 allow mm-qcamerad camera_socket:sock_file setattr;
-allow mm-qcamerad system_data_file:dir { add_name remove_name write };
-allow mm-qcamerad system_data_file:sock_file { create setattr unlink };
+allow mm-qcamerad camera_sysfs:file rw_file_perms;
+allow mm-qcamerad system_data_file:dir w_dir_perms;
+allow mm-qcamerad system_data_file:sock_file unlink;
 allow mm-qcamerad system_file:file execmod;
-allow mm-qcamerad vendor_file:file execmod;
-
-allow mm-qcamerad { hal_graphics_allocator hal_camera_default }:fd use;
-
-binder_call(mm-qcamerad, servicemanager);
-
+type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket0";

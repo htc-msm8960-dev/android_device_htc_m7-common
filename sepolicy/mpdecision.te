@@ -1,15 +1,3 @@
-allow mpdecision mpdecision:netlink_kobject_uevent_socket { create setopt bind read };
-
-allow mpdecision mpdecision_socket:dir w_dir_perms;
-allow mpdecision mpdecision_socket:sock_file create_file_perms;
-
-type_transition mpdecision system_data_file:file mpctl_data_file;
-
-unix_socket_connect(mpdecision, thermal, thermal-engine)
-
-allow mpdecision sysfs:file rw_file_perms;
 allow mpdecision system_data_file:dir w_dir_perms;
-
-r_dir_file(mpdecision, mediaserver)
-r_dir_file(mpdecision, cameraserver)
-r_dir_file(mpdecision, domain)
+type_transition mpdecision socket_device:sock_file mpctl_socket;
+type_transition mpdecision system_data_file:file mpctl_data_file;

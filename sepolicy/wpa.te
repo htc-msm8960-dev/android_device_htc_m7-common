@@ -1,8 +1,0 @@
-type wpa, domain;
-type wpa_exec, exec_type, file_type;
-
-init_daemon_domain(wpa)
-
-allow wpa devpts:chr_file rw_file_perms;
-allow wpa init:unix_dgram_socket { read write };
-allow wpa bluetooth_device:chr_file r_file_perms;

@@ -1,2 +1,1 @@
 allow thermal-engine self:capability { chown net_admin };
-allow thermal-engine init:unix_stream_socket connectto;

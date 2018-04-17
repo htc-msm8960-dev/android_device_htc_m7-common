@@ -1,13 +1,7 @@
-allow mdm_helper efs_data_file:lnk_file r_file_perms;
+allow mdm_helper efs_data_file:lnk_file read;
 allow mdm_helper mdm_helper_tmpfs:file create_file_perms;
 allow mdm_helper modem_efs_partition_device:blk_file rw_file_perms;
 allow mdm_helper radio_device:chr_file rw_file_perms;
 allow mdm_helper tmpfs:dir w_dir_perms;
 allow mdm_helper toolbox_exec:file rx_file_perms;
-allow mdm_helper sysfs_wake_lock:file r_file_perms;
-allow mdm_helper proc:file r_file_perms;
-allow mdm_helper vfat:file { getattr open read };
-allow mdm_helper sysfs:file getattr;
 set_prop(mdm_helper, radio_prop)
-allow mdm_helper sysfs:file read;
-allow mdm_helper system_data_file:lnk_file read;

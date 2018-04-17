@@ -1,2 +1,0 @@
-get_prop(priv_app, qemu_hw_mainkeys_prop)
-allow platform_app qemu_hw_mainkeys_prop:file { getattr open read };

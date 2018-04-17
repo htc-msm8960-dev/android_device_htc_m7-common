@@ -1,1 +1,0 @@
-allow install_recovery sysfs:file { getattr open read };
