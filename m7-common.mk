@@ -41,6 +41,9 @@ PRODUCT_PACKAGES += \
     libcamera_shim \
     Snap
 
+# Charger
+WITH_LINEAGE_CHARGER := false
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8960
