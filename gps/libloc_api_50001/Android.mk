@@ -64,7 +64,8 @@ LOCAL_SHARED_LIBRARIES := \
     libcutils \
     libloc_adapter \
     libgps.utils \
-    liblog
+    liblog \
+    libprocessgroup
 
 LOCAL_SRC_FILES += \
     loc_eng.cpp \
@@ -113,7 +114,8 @@ LOCAL_SHARED_LIBRARIES := \
     libloc_eng \
     libgps.utils \
     libdl \
-    liblog
+    liblog \
+    libprocessgroup
 
 LOCAL_SRC_FILES += \
     loc.cpp \
