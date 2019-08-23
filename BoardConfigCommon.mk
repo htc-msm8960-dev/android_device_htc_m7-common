@@ -28,45 +28,24 @@
 # inherit from common msm8960
 -include device/htc/msm8960-common/BoardConfigCommon.mk
 
-PLATFORM_PATH := device/htc/m7-common
+LOCAL_PATH := device/htc/m7-common
 
 # Audio
-BOARD_HAVE_HTC_CSDCLIENT := true
-USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
-BOARD_CUSTOM_BT_CONFIG := $(PLATFORM_PATH)/bluetooth/libbt_vndcfg.txt
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/bluetooth/libbt_vndcfg.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
 
-# Gps
-USE_DEVICE_SPECIFIC_GPS := true
-
-# Camera
-TARGET_DISPLAY_INSECURE_MM_HEAP := true
-USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_USES_MEDIA_EXTENSIONS := true
-TARGET_USES_NON_TREBLE_CAMERA := true
-
-# Charger
-BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
-
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776704
-
-# General compilation flags
-TARGET_SPECIFIC_HEADER_PATH += $(PLATFORM_PATH)/include
-
-# Graphics
-HAVE_ADRENO_SOURCE := false
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # Kernel
 TARGET_COMPILE_WITH_MSM_KERNEL := true
@@ -79,36 +58,23 @@ TARGET_KERNEL_CONFIG := m7_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8960
 
 # LINEAGEHW
-BOARD_HARDWARE_CLASS := $(PLATFORM_PATH)/lineagehw
-
-# Power
-TARGET_HAS_LEGACY_POWER_STATS := true
-TARGET_HAS_NO_WIFI_STATS := true
-TARGET_USES_INTERACTION_BOOST := true
+BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/lineagehw
 
 # Recovery
 BOARD_GLOBAL_CFLAGS := -DBOARD_RECOVERY_BLDRMSG_OFFSET=2048
 BOARD_NO_SECURE_DISCARD := true
 TARGET_RECOVERY_DEVICE_DIRS += device/htc/m7-common
-TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-# RIL
-BOARD_PROVIDES_LIBRIL := true
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/htc/m7-common/releasetools
 
 # SELinux
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
-
-# Shims
-TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib/hw/camera.vendor.msm8960.so|libcamera_shim.so \
-    /system/vendor/lib/libqc-opt.so|libqc-opt_shim.so \
-    /system/lib/liblog.so|liblog_shim.so \
-    /system/vendor/lib/libwvm.so|libshim_wvm.so \
-    /system/vendor/lib/libril.so|libshim_ril.so \
-    /system/vendor/lib/libril-qc-qmi-1.so|libshim_ril.so
+include device/qcom/sepolicy-legacy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 
 # Wifi
 BOARD_HOSTAPD_DRIVER             := NL80211
