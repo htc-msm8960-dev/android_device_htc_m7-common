@@ -13,13 +13,13 @@ service kickstartcdma /system/bin/qcks -1 modem_st1 -2 modem_st2 -3 radio_config
     oneshot
     disabled
 
-on property:ro.product.device=m7wlv
+on property:ro.product.device=m7vzw
     start kickstartcdma
 
-on property:ro.product.device=m7wls
+on property:ro.product.device=m7spr
     start kickstartcdma
 
-on property:ro.product.device=t6
+on property:ro.product.device=m7
     start kickstartgsm
 
 service loggy /system/bin/sh /loggy.sh
