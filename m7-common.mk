@@ -101,3 +101,7 @@ PRODUCT_COPY_FILES += \
 # Include non-opensource parts
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4335/device-bcm.mk)
 $(call inherit-product-if-exists, vendor/htc/m7-common/m7-common-vendor.mk)
+
+# Variant linking script
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/releasetools/variant_script.sh:install/bin/variant_script.sh
