@@ -54,7 +54,8 @@
 
        There must be one of these for each cluster, labeled:
        cpu.speeds.cluster0, cpu.speeds.cluster1, etc... -->
-  <array name="cpu.speeds.cluster0">
+  <item name="cpu.clusters.cores">4</item>
+  <array name="cpu.core_speeds.cluster0">
       <value>384000</value>
       <value>486000</value>
       <value>594000</value>
@@ -74,7 +75,8 @@
   <!-- Current at each CPU speed for cluster 0, as per 'cpu.speeds.cluster0'.
      Like cpu.speeds.cluster0, there must be one of these present for
      each heterogeneous CPU cluster. -->
-  <array name="cpu.active.cluster0">
+  <item name="cpu.idle">2.52</item>
+  <array name="cpu.core_power.cluster0">
       <value>27.36</value>
       <value>30.96</value>
       <value>36.00</value>
@@ -90,9 +92,6 @@
       <value>151.20</value>
       <value>162.00</value>
   </array>
-
-  <!-- Current when CPU is idle -->
-  <item name="cpu.idle">2.52</item>
 
   <!-- This is the battery capacity in mAh (measured at nominal voltage) -->
   <item name="battery.capacity">2300</item>
