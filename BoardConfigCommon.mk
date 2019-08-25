@@ -79,6 +79,11 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/htc/m7-common/releasetools
 include device/qcom/sepolicy-legacy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 
+TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
+    /system/vendor/bin/hw/android.hardware.wifi@1.0-service=22 \
+    /system/bin/hwservicemanager=22 \
+    /system/bin/healthd=22
+
 # Wifi
 BOARD_HOSTAPD_DRIVER             := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
