@@ -30,9 +30,6 @@
 
 LOCAL_PATH := device/htc/m7-common
 
-# Audio
-USE_XML_AUDIO_POLICY_CONF := 1
-
 # Bluetooth
 BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/bluetooth/libbt_vndcfg.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
