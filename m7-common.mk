@@ -98,7 +98,7 @@ PRODUCT_COPY_FILES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermald.conf:system/etc/thermald.conf
+    $(LOCAL_PATH)/configs/thermal-engine-8064.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8064.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/calibration:system/etc/calibration \
