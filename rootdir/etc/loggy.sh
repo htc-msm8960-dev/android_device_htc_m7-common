@@ -1,4 +1,4 @@
-#!/vendor/bin/sh
+#!/bin/sh
 # loggy.sh.
 
 date=`date +%F_%H-%M-%S`
