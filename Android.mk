@@ -20,17 +20,6 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
-FIRMWARE_MOUNT_POINT := $(TARGET_OUT_VENDOR)/firmware_mnt
-
-$(FIRMWARE_MOUNT_POINT):
-	@echo "Creating $(FIRMWARE_MOUNT_POINT)"
-	@mkdir -p $(TARGET_OUT_VENDOR)/firmware_mnt
-ifneq ($(TARGET_MOUNT_POINTS_SYMLINKS),false)
-	@ln -sf /vendor/firmware_mnt $(TARGET_ROOT_OUT)/firmware
-endif
-
-ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MOUNT_POINT)
-
 # Create firmware links
 FIRMWARE_MDM_IMAGES := \
     acdb.mbn \
@@ -56,7 +45,7 @@ $(FIRMWARE_MDM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "MDM Firmware link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf /vendor/firmware_mnt/mdm/image/$(notdir $@) $@
+	$(hide) ln -sf /firmware/mdm/image/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MDM_SYMLINKS)
 
@@ -68,7 +57,7 @@ $(FIRMWARE_Q6_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Q6 Firmware link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf /vendor/firmware_mnt/q6/$(notdir $@) $@
+	$(hide) ln -sf /firmware/q6/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_Q6_SYMLINKS)
 

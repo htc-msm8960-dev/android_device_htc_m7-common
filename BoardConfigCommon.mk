@@ -59,9 +59,15 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01800000
 TARGET_KERNEL_CONFIG := m7_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8960
 
-BOARD_ROOT_EXTRA_FOLDERS += devlog ramdump persist
+BOARD_ROOT_EXTRA_FOLDERS := \
+    firmware/q6 \
+    firmware/mdm
+
 BOARD_ROOT_EXTRA_SYMLINKS += \
-    /vendor/firmware_mnt:/firmware
+    /data/tombstones:/tombstones \
+    /data/persist:/persist \
+    /data/ramdump:/ramdump \
+    /data/devlog:/devlog
 
 # LINEAGEHW
 # BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/lineagehw

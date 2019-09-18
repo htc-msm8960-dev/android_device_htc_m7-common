@@ -3,7 +3,6 @@ import init.target.rc
 import init.qcom.usb.rc
 
 on early-init
-    symlink /data/tombstones /tombstones
 
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
@@ -172,9 +171,6 @@ on init
 
 # On emmc mount the partition containing firmware
 on fs
-    # For firmwares
-    mkdir /vendor/firmware 0771 system system
-
     mount_all ./fstab.qcom
 
     mkdir /mnt/qcks 0700 root system
