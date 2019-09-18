@@ -59,6 +59,10 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01800000
 TARGET_KERNEL_CONFIG := m7_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8960
 
+BOARD_ROOT_EXTRA_FOLDERS := devlog ramdump persist
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /vendor/firmware_mnt:/firmware
+
 # LINEAGEHW
 # BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/lineagehw
 
@@ -77,6 +81,8 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/htc/m7-common/releasetools
 # SELinux
 #include device/qcom/sepolicy-legacy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
+
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy-minimal
 
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/hw/android.hardware.wifi@1.0-service=22 \
