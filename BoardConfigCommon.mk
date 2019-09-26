@@ -69,9 +69,6 @@ BOARD_ROOT_EXTRA_SYMLINKS += \
     /data/ramdump:/ramdump \
     /data/devlog:/devlog
 
-# LINEAGEHW
-BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/lineagehw
-
 # Recovery
 BOARD_GLOBAL_CFLAGS := -DBOARD_RECOVERY_BLDRMSG_OFFSET=2048
 BOARD_NO_SECURE_DISCARD := true
