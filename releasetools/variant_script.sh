@@ -5,7 +5,7 @@ set -e
 # Helper functions
 copy()
 {
-  LD_LIBRARY_PATH=/system/lib /system/bin/toybox cp --preserve=a "$1" "$2"
+  LD_LIBRARY_PATH=/system/lib /sbin/busybox cp -c "$1" "$2"
 }
 
 # Detect variant and copy its specific-blobs
@@ -20,17 +20,17 @@ esac
 
 # Skip copying blobs in case of Dual SIM variants because the files are already in the proper location
 if [ "$variant" == "vzw" ] || [ "$variant" == "spr" ] || [ "$variant" == "gsm" ]; then
-  basedir="/system/vendor/blobs/$variant/"
+  basedir="/system/system/vendor/blobs/$variant/"
   if [ -d $basedir ]; then
     cd $basedir
 
     for file in `find . -type f` ; do
-      mkdir -p `dirname /system/$file`
-      copy $file /system/$file
+      mkdir -p `dirname /system/system/$file`
+      copy $file /system/system/$file
     done
 
     for file in bin/* ; do
-      chmod 755 /system/$file
+      chmod 755 /system/system/$file
     done
   else
     echo "Expected source directory does not exist!"
