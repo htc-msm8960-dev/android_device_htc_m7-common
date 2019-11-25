@@ -22,6 +22,7 @@ subsystem msm_camera
 /dev/msm_rotator          0660   system     graphics
 
 # these should not be world writable
+/dev/alarm                0664   system     radio
 /dev/ttyHS0               0660   bluetooth  bluetooth
 /dev/ttyGS0               0660   system     system
 /dev/sdio_tty_ciq_00      0660   system     system
@@ -107,6 +108,7 @@ subsystem msm_camera
 /dev/msm_qcelp            0660  system       audio
 /dev/msm_evrc             0660  system       audio
 /dev/msm_fm               0660  system       audio
+/dev/msm_mp3              0660  system       audio
 /dev/msm_acdb             0660  system       audio
 /dev/msm_rtac             0660  system       audio
 /dev/msm_wma              0660  system       audio
@@ -147,6 +149,10 @@ subsystem msm_camera
 
 # Radio
 /dev/radio_feedback       0660  radio        radio
+/dev/qmi                  0640  radio        radio
+/dev/qmi0                 0640  radio        radio
+/dev/qmi1                 0640  radio        radio
+/dev/qmi2                 0640  radio        radio
 
 # MPU3050
 /dev/mpu                  0664  system       system
