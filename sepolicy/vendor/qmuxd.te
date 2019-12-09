@@ -1,0 +1,7 @@
+allow qmuxd shell_exec:file rx_file_perms;
+allow qmuxd self:capability { dac_override };
+allow qmuxd self:capability { setpcap setuid };
+allow qmuxd sysfs:file { getattr };
+allow qmuxd sysfs:file rw_file_perms;
+
+wakelock_use(qmuxd)

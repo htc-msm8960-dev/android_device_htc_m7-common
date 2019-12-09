@@ -1,0 +1,4 @@
+allow servicemanager sysfs:file { getattr open read };
+allow servicemanager mm-qcamerad:dir search;
+allow servicemanager mm-qcamerad:file { open read };
+allow servicemanager mm-qcamerad:process getattr;

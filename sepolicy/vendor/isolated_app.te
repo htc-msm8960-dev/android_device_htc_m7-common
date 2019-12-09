@@ -1,0 +1,2 @@
+allow isolated_app sysfs:dir open;
+

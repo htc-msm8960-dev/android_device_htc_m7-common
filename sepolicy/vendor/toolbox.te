@@ -1,0 +1,3 @@
+allow toolbox sysfs:file { getattr open read };
+allow toolbox init:fifo_file r_file_perms;
+

@@ -83,8 +83,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/htc/m7-common/releasetools
 
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
-BOARD_SEPOLICY_DIRS += device/htc/m7-common/sepolicy-minimal
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy/vendor
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(LOCAL_PATH)/sepolicy/private
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(LOCAL_PATH)/sepolicy/public
 
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/hw/android.hardware.wifi@1.0-service=22 \

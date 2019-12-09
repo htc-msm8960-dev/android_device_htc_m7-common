@@ -1,3 +1,0 @@
-type devlog_file, file_type;
-type ramdump_file, file_type;
-type tombstones_file, file_type;

@@ -1,0 +1,18 @@
+type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket0";
+
+allow mm-qcamerad camera_device:dir search;
+allow mm-qcamerad { camera_device gpu_device video_device }:chr_file rw_file_perms;
+
+allow mm-qcamerad camera_socket:sock_file setattr;
+allow mm-qcamerad system_data_file:dir { add_name remove_name };
+allow mm-qcamerad system_data_file:sock_file { create setattr };
+allow mm-qcamerad system_data_file:dir w_dir_perms;
+allow mm-qcamerad system_data_file:sock_file unlink;
+allow mm-qcamerad system_file:file execmod;
+allow mm-qcamerad vendor_file:file execmod;
+
+allow mm-qcamerad { audioserver cameraserver surfaceflinger mediaserver }:fd use;
+allow mm-qcamerad { hal_graphics_allocator hal_camera_default }:fd use;
+allow mm-qcamerad hal_renderscript_hwservice:hwservice_manager find;
+binder_call(mm-qcamerad, servicemanager);
+
