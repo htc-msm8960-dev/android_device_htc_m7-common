@@ -369,40 +369,40 @@ on boot
 
 # Services begin here
 
-service akmd /system/bin/akmd
+service akmd /vendor/bin/akmd
     class main
     user system
     group system misc input
 
-service cir_fw_update /system/bin/cir_fw_update -u cir.img
+service cir_fw_update /vendor/bin/cir_fw_update -u cir.img
     class main
     user root
     group root
     oneshot
 
-service netmgrd /system/bin/netmgrd
+service netmgrd /vendor/bin/netmgrd
     class core
     user root
     group root system wifi wakelock radio inet oem_2950
 
-service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
+service mpdecision /vendor/bin/mpdecision --no_sleep --avg_comp
     class main
     user root
     group root readproc
     disabled
 
-service qcamerasvr /system/bin/mm-qcamera-daemon
+service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet graphics
 
 # QMUX must be in multiple groups to support external process connections
-service qmuxd /system/bin/qmuxd
+service qmuxd /vendor/bin/qmuxd
     class core
     user root
     group radio audio gps wakelock oem_2950
 
-service qseecomd /system/bin/qseecomd
+service qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
