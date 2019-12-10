@@ -1,11 +1,3 @@
-subsystem adsp
-    devname uevent_devpath
-    dirname /dev/adsp
-
-subsystem msm_camera
-    devname uevent_devpath
-    dirname /dev/msm_camera
-
 /dev/rtc0                 0600   system     system
 
 # the DIAG device node is world writable/readable.
@@ -140,7 +132,6 @@ subsystem msm_camera
 /dev/pn544                0600  nfc          nfc
 
 # Audio
-/dev/adsp/*               0660  system       audio
 /dev/rt5501               0666  system       audio
 /dev/tfa9887              0666  system       audio
 /dev/tfa9887l             0666  system       audio
