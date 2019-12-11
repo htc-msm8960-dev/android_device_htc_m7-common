@@ -1,18 +1,40 @@
-allow init self:netlink_kobject_uevent_socket read;
+allow init self:netlink_kobject_uevent_socket { read create setopt};
 allow init self:netlink_route_socket read;
 
-allow init device_latency:chr_file w_file_perms;
-allow init hsic_device:chr_file w_file_perms;
+allow init device_latency:chr_file rw_file_perms;
+allow init hsic_device:chr_file rw_file_perms;
 
-allow init qmuxd_socket:sock_file w_file_perms;
+allow init qmuxd_socket:sock_file rw_file_perms;
 
 allow init vendor_file:file execmod;
 allow init debugfs_trace_marker:file getattr;
 allow init debugfs:file w_file_perms;
-allow init vibeamp_sysfs:file rw_file_perms;
+allow init vibeamp_sysfs:file { rw_file_perms setattr };
 
-allow init ion_device:chr_file r_file_perms;
-allow init video_device:chr_file r_file_perms;
+allow init ion_device:chr_file rw_file_perms;
+allow init video_device:chr_file rw_file_perms;
 
 allow init { domain -lmkd -crash_dump }:process noatsecure;
 
+allow init device:chr_file { getattr ioctl open read write };
+allow init mdm_device:chr_file ioctl;
+allow init self:netlink_socket { read write };
+allow init shell_exec:file execute_no_trans;
+allow init socket_device:sock_file { create setattr };
+allow init sysfs:file { rw_file_perms setattr };
+allow init sysfs_devices_system_cpu:file rw_file_perms;
+allow init sysfs_wake_lock:file rw_file_perms;
+allow init system_data_file:file append;
+allow init system_file:file execute_no_trans;
+allow init system_lib_file:file execmod;
+allow init vendor_file:file execmod;
+allow init system_server:binder { call transfer };
+allow init camera_device:chr_file { ioctl open read write };
+allow init persist_file:lnk_file read;
+allow init proc:file { setattr write };
+allow init surfaceflinger_sysfs:file setattr;
+allow init tee_device:chr_file { read write open ioctl };
+allow init tombstones_file:lnk_file read;
+allow init sysfs_cpu_boost:file rw_file_perms;
+allow init sysfs_mpdecision:file rw_file_perms;
+allow init sysfs_thermal:file rw_file_perms;

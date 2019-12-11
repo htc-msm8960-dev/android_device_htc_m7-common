@@ -1,3 +1,6 @@
 allow toolbox sysfs:file { getattr open read };
 allow toolbox init:fifo_file r_file_perms;
-
+allow toolbox block_device:blk_file { open write };
+allow toolbox init_tmpfs:file rw_file_perms;
+allow toolbox mdm_device:chr_file read;
+allow toolbox system_data_file:lnk_file read;

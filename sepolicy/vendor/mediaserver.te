@@ -23,6 +23,17 @@ allow mediaserver tee_device:chr_file rw_file_perms;
 allow mediaserver sensorservice_service:service_manager find;
 allow mediaserver system_server:service_manager find;
 
+allow mediaserver cameraproxy_service:service_manager find;
+allow mediaserver cameraserver_service:service_manager add;
+allow mediaserver debugfs:file { getattr open read };
+allow mediaserver fwk_camera_hwservice:hwservice_manager add;
+allow mediaserver hidl_base_hwservice:hwservice_manager add;
+allow mediaserver self:netlink_kobject_uevent_socket { bind create getopt setopt };
+allow mediaserver sensor_privacy_service:service_manager find;
+allow mediaserver sysfs:file { getattr open read };
+allow mediaserver hal_camera_hwservice:hwservice_manager find;
+allow mediaserver system_lib_file:file execmod;
+
 allow mediaserver mediaserver:fd use;
 
 binder_call(mediaserver, servicemanager);

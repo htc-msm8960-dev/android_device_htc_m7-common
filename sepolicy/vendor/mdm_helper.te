@@ -1,12 +1,16 @@
 allow mdm_helper efs_data_file:lnk_file r_file_perms;
 allow mdm_helper modem_efs_partition_device:blk_file rw_file_perms;
 allow mdm_helper radio_device:chr_file rw_file_perms;
-allow mdm_helper tmpfs:dir w_dir_perms;
+allow mdm_helper tmpfs:dir rw_dir_perms;
+allow mdm_helper tmpfs:file { rw_file_perms create setattr unlink };
 allow mdm_helper toolbox_exec:file rx_file_perms;
 allow mdm_helper sysfs_wake_lock:file r_file_perms;
 allow mdm_helper proc:file r_file_perms;
 allow mdm_helper vfat:file { getattr open read };
+allow mdm_helper exfat:file { getattr open read };
+allow mdm_helper exfat:dir create_dir_perms;
 allow mdm_helper sysfs:file getattr;
+allow mdm_helper system_data_file:lnk_file { getattr open read };
 set_prop(mdm_helper, radio_prop)
 
 

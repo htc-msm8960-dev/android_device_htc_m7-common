@@ -1,0 +1,2 @@
+allow hal_gnss_default system_data_file:fifo_file { open read setattr write };
+allow hal_gnss_default init:unix_stream_socket connectto;

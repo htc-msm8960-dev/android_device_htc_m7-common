@@ -1,0 +1,1 @@
+allow zygote proc_cmdline:file rw_file_perms;

@@ -1,0 +1,2 @@
+allow hal_wifi_supplicant_default device:chr_file rw_file_perms;
+allow hal_wifi_supplicant_default bluetooth_device:chr_file rw_file_perms;
