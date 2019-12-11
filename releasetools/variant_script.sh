@@ -5,7 +5,13 @@ set -e
 # Helper functions
 copy()
 {
-  LD_LIBRARY_PATH=/system/lib /sbin/busybox cp -c "$1" "$2"
+  cp -dp "$1" "$2"
+  # symlinks don't have a context
+  if [ ! -L "$1" ]; then
+    # it is assumed that every label starts with 'u:object_r' and has no white-spaces
+    local context=`ls -Z "$1" | grep -o 'u:object_r:[^ ]*' | head -1`
+    chcon -v "$context" "$2"
+  fi
 }
 
 # Detect variant and copy its specific-blobs
