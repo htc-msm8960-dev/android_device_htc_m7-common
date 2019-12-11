@@ -84,3 +84,13 @@
 /sys/devices/virtual/graphics/fb1/hpd                  -- u:object_r:surfaceflinger_sysfs:s0
 /sys/devices/virtual/graphics/fb1/product_description  -- u:object_r:surfaceflinger_sysfs:s0
 /sys/devices/virtual/graphics/fb1/vendor_name          -- u:object_r:surfaceflinger_sysfs:s0
+
+/(vendor|system/vendor)/bin/efsks                                               u:object_r:mdm_helper_exec:s0
+/(vendor|system/vendor)/bin/qcks                                                u:object_r:mdm_helper_exec:s0
+/system/vendor/blobs/(.*)/bin/netmgrd                                                u:object_r:netmgrd_exec:s0
+/system/vendor/blobs/(.*)/bin/qmuxd                                                  u:object_r:qmuxd_exec:s0
+/system/vendor/blobs/(.*)/bin/efsks                                               u:object_r:mdm_helper_exec:s0
+/system/vendor/blobs/(.*)/bin/qcks                                                u:object_r:mdm_helper_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.htc8960       u:object_r:hal_health_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.htc_msm8960   u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@1\.0-service\.htc8960      u:object_r:hal_sensors_default_exec:s0
