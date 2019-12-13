@@ -27,7 +27,7 @@ allow init sysfs_wake_lock:file rw_file_perms;
 allow init system_data_file:file append;
 allow init system_file:file execute_no_trans;
 allow init system_lib_file:file execmod;
-allow init vendor_file:file execmod;
+allow init vendor_file:file { execmod execute_no_trans };
 allow init system_server:binder { call transfer };
 allow init camera_device:chr_file { ioctl open read write };
 allow init persist_file:lnk_file read;
