@@ -1,3 +1,4 @@
 allow hal_wifi_default firmware_file:file rw_file_perms;
 allow hal_wifi_default firmware_file:dir { create_file_perms search };
 allow hal_wifi_default sysfs:file rw_file_perms;
+allow hal_wifi_default default_prop:property_service set;
