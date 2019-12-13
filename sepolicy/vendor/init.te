@@ -1,4 +1,4 @@
-allow init self:netlink_kobject_uevent_socket { read create setopt getopt };
+allow init self:netlink_kobject_uevent_socket { bind create write read setopt getopt};
 allow init self:netlink_route_socket read;
 
 allow init device_latency:chr_file rw_file_perms;
