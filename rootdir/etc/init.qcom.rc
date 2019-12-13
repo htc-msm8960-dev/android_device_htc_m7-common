@@ -130,14 +130,14 @@ on init
     chmod 0660 /sys/class/bma250/bma250/enable
 
     # Proximity sensor
-    chown system radio /sys/class/optical_sensors/proximity/PhoneApp_status
+    chown system input /sys/class/optical_sensors/proximity/PhoneApp_status
     chmod 0660 /sys/class/optical_sensors/proximity/PhoneApp_status
 
-    chown system radio /sys/devices/virtual/optical_sensors/proximity/ps_adc
+    chown system input /sys/devices/virtual/optical_sensors/proximity/ps_adc
     chmod 0660 /sys/devices/virtual/optical_sensors/proximity/ps_adc
-    chown system radio /sys/devices/virtual/optical_sensors/proximity/ps_canc
+    chown system input /sys/devices/virtual/optical_sensors/proximity/ps_canc
     chmod 0660 /sys/devices/virtual/optical_sensors/proximity/ps_canc
-    chown system radio /sys/devices/virtual/optical_sensors/proximity/ps_kadc
+    chown system input /sys/devices/virtual/optical_sensors/proximity/ps_kadc
     chmod 0660 /sys/devices/virtual/optical_sensors/proximity/ps_kadc
 
     # htc_cir
