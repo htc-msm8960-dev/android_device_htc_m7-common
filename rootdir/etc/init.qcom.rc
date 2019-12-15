@@ -435,3 +435,6 @@ on property:service.adb.root=1
     write /sys/class/android_usb/android0/enable 0
     restart adbd
     write /sys/class/android_usb/android0/enable 1
+
+on property:apexd.status=ready
+    mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
