@@ -96,6 +96,9 @@ on enable-low-power
     chmod 664 /sys/module/msm_mpdecision/slack_time_min_us
 
 on property:sys.boot_completed=1
+    # Fast Charging
+    write /sys/kernel/fast_charge/force_fast_charge 1
+
     trigger enable-low-power
 
 on property:init.svc.recovery=running
