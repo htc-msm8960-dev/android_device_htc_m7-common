@@ -53,7 +53,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335_prepatch.hcd
+    $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/bcm4335_prepatch.hcd
 
 # Consumerir HIDL interfaces
 PRODUCT_PACKAGES += \
@@ -108,8 +108,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-8064.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8064.conf
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/calibration:system/etc/calibration \
-    $(LOCAL_PATH)/configs/calibration_EMEA:system/etc/calibration_EMEA \
+    $(LOCAL_PATH)/configs/calibration:$(TARGET_COPY_OUT_VENDOR)/etc/calibration \
+    $(LOCAL_PATH)/configs/calibration_EMEA:$(TARGET_COPY_OUT_VENDOR)/etc/calibration_EMEA \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
 

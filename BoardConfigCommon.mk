@@ -103,10 +103,10 @@ BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
 BOARD_WLAN_DEVICE                := bcmdhd
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-WIFI_DRIVER_FW_PATH_AP           := "/system/etc/firmware/fw_bcmdhd_apsta_b0.bin"
-WIFI_DRIVER_FW_PATH_P2P          := "/system/etc/firmware/fw_bcmdhd_p2p_b0.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/etc/firmware/fw_bcm4335_apsta_b0.bin"
+WIFI_DRIVER_FW_PATH_P2P          := "/vendor/etc/firmware/fw_bcm4335_p2p_b0.bin"
 WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA          := "/system/etc/firmware/fw_bcmdhd_b0.bin"
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/etc/firmware/fw_bcm4335_b0.bin"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 
