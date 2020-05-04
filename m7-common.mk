@@ -51,10 +51,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
-# Bluetooth
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/bcm4335_prepatch.hcd
-
 # Consumerir HIDL interfaces
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl
