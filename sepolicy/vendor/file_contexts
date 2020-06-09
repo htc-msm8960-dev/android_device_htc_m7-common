@@ -63,6 +63,8 @@
 # Rootfs Symlinks
 #
 /devlog(/.*)?              u:object_r:devlog_file:s0
+/firmware/mdm(/.*)?       u:object_r:firmware_file:s0
+/firmware/q6(/.*)?       u:object_r:firmware_file:s0
 /ramdump(/.*)?              u:object_r:ramdump_file:s0
 /tombstones(/.*)?              u:object_r:tombstones_file:s0
 
