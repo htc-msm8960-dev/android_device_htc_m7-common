@@ -2,6 +2,9 @@
 
 set -e
 
+echo "Mounting system"
+mount -t ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system_root -o rw,discard
+
 # Helper functions
 copy()
 {
@@ -26,22 +29,26 @@ esac
 
 # Skip copying blobs in case of Dual SIM variants because the files are already in the proper location
 if [ "$variant" == "vzw" ] || [ "$variant" == "spr" ] || [ "$variant" == "gsm" ]; then
-  basedir="/system/vendor/blobs/$variant/"
+  basedir="/system_root/system/vendor/blobs/$variant/"
   if [ -d $basedir ]; then
     cd $basedir
 
     for file in `find . -type f` ; do
       mkdir -p `dirname /system/$file`
-      copy $file /system/$file
+      copy $file /system_root/system/$file
     done
 
     for file in bin/* ; do
-      chmod 755 /system/$file
+      chmod 755 /system_root/system/$file
     done
+    cd /
   else
     echo "Expected source directory does not exist!"
+    cd /
+    umount /system_root
     exit 1
   fi
 fi
 
+umount /system_root
 exit 0

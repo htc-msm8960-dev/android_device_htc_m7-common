@@ -21,12 +21,8 @@ import re
 import os
 
 def FullOTA_InstallEnd(info):
-  info.script.Print("Remounting System")
-  info.script.AppendExtra('mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");');
   info.script.Print("Running Unifying Script")
-  info.script.AppendExtra('assert(run_program("/tmp/install/bin/variant_script.sh") == 0);')
-  info.script.Print("Unmounting System as Root")
-  info.script.AppendExtra('unmount("/system");');
+  info.script.AppendExtra('run_program("/tmp/install/bin/variant_script.sh");')
 
 def FullOTA_PostValidate(info):
   info.script.AppendExtra('run_program("/sbin/e2fsck", "-fy", "/dev/block/platform/msm_sdcc.1/by-name/system");');
