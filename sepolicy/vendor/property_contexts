@@ -1,2 +1,5 @@
 efsks.pid               u:object_r:radio_prop:s0
 oc.cpu_ctrl             u:object_r:powerctl_prop:s0
+
+# FastCharge
+persist.vendor.fastcharge.enabled     u:object_r:fastcharge_prop:s0

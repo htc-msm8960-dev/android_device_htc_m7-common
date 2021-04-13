@@ -5,3 +5,4 @@ type devlog_file, file_type;
 type ramdump_file, file_type;
 type tombstones_file, file_type;
 type doubletap2wake_sysfs, fs_type, sysfs_type;
+type sysfs_fastcharge_switch, fs_type, sysfs_type;
