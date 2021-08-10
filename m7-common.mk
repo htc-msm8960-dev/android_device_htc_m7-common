@@ -55,6 +55,14 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl
 
+# DeviceSettings
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
+# Priv-app permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-m7.xml:system/etc/permissions/privapp-permissions-m7.xml
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8960 \
