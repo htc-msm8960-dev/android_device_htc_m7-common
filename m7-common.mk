@@ -117,6 +117,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
 
+# WiFi HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service.legacy
+
 # Include non-opensource parts
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4335/device-bcm.mk)
 $(call inherit-product-if-exists, vendor/htc/m7-common/m7-common-vendor.mk)
