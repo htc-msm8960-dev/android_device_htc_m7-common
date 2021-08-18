@@ -19,6 +19,7 @@
 /data/cam_socket.*              u:object_r:camera_socket:s0
 /dev/gemini.*                   u:object_r:camera_device:s0
 /dev/rawchip.*                  u:object_r:camera_device:s0
+/(system|vendor|system/vendor)/bin/mm-qcamera-daemon       u:object_r:mm-qcamerad_exec:s0
 
 ###################################
 # CIR
