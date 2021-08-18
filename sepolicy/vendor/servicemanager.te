@@ -2,3 +2,6 @@ allow servicemanager sysfs:file { getattr open read };
 allow servicemanager mm-qcamerad:dir search;
 allow servicemanager mm-qcamerad:file { open read };
 allow servicemanager mm-qcamerad:process getattr;
+allow servicemanager hal_power_default:dir r_dir_perms;
+allow servicemanager hal_power_default:file r_file_perms;
+allow servicemanager hal_power_default:process getattr;

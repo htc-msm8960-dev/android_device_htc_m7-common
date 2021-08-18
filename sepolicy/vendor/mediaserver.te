@@ -33,6 +33,7 @@ allow mediaserver sensor_privacy_service:service_manager find;
 allow mediaserver sysfs:file { getattr open read };
 allow mediaserver hal_camera_hwservice:hwservice_manager find;
 allow mediaserver system_lib_file:file execmod;
+allow mediaserver system_data_root_file:sock_file write;
 
 allow mediaserver mediaserver:fd use;
 
