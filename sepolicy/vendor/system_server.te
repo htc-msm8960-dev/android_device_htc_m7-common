@@ -11,5 +11,6 @@ allow system_server unlabeled:file { rw_file_perms unlink };
 allow system_server unlabeled:dir rw_dir_perms;
 allow system_server tombstones_file:dir rw_dir_perms;
 
+get_prop(system_server, exported_camera_prop);
 get_prop(system_server, userspace_reboot_config_prop);
 get_prop(system_server, userspace_reboot_exported_prop);
