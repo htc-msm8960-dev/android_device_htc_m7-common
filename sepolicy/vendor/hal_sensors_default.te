@@ -10,3 +10,4 @@ allow hal_sensors_default system_lib_file:file execmod;
 allow hal_sensors_default system_data_file:file { rw_file_perms create };
 allow hal_sensors_default system_data_file:dir { create_dir_perms write };
 allow hal_sensors_default system_prop:property_service set;
+allow hal_sensors_default system_data_root_file:file rw_file_perms;
