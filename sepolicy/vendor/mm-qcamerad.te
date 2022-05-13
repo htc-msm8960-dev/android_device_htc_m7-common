@@ -14,9 +14,11 @@ allow mm-qcamerad device:chr_file { ioctl open read write };
 allow mm-qcamerad sysfs:file { getattr open read write };
 allow mm-qcamerad system_data_root_file:sock_file unlink;
 allow mm-qcamerad system_lib_file:file execmod;
+allow mm-qcamerad mpctl_socket:sock_file w_file_perms;
 
 allow mm-qcamerad { audioserver cameraserver surfaceflinger mediaserver }:fd use;
 allow mm-qcamerad { hal_graphics_allocator hal_camera_default }:fd use;
 allow mm-qcamerad hal_renderscript_hwservice:hwservice_manager find;
 binder_call(mm-qcamerad, servicemanager);
 
+unix_socket_connect(mm-qcamerad, mpdecision, mpdecision)
