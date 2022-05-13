@@ -1,3 +1,5 @@
+init_daemon_domain(mpdecision)
+
 binder_use(mpdecision)
 
 type_transition mpdecision socket_device:sock_file mpctl_socket;
