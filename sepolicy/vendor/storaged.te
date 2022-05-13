@@ -1,0 +1,4 @@
+type storaged, domain;
+type storaged_exec, exec_type, file_type;
+
+allow storaged sysfs:file { getattr open read };
