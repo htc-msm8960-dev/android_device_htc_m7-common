@@ -12,6 +12,7 @@ allow mpdecision mpdecision_socket:sock_file create_file_perms;
 allow mpdecision socket_device:dir w_dir_perms;
 allow mpdecision sysfs_devices_system_cpu:file rw_file_perms;
 allow mpdecision system_data_file:dir w_dir_perms;
+allow mpdecision sysfs_memory:dir search;
 
 allow mpdecision mpdecision:netlink_kobject_uevent_socket { create setopt bind read };
 
