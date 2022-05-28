@@ -1,6 +1,3 @@
 type bluetooth_device, dev_type;
 type cir_device, dev_type;
 type qseecom_device, dev_type;
-
-#Added for fm_radio device
-type  fm_radio_device, dev_type;

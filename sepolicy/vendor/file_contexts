@@ -119,4 +119,3 @@
 /dev/cpu_dma_latency                            u:object_r:device_latency:s0
 /dev/kgsl-3d0                                   u:object_r:gpu_device:s0
 /dev/hsicctl.*                                  u:object_r:hsic_device:s0
-/dev/radio0                                     u:object_r:fm_radio_device:s0
