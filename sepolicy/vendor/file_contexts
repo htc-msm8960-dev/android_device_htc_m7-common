@@ -19,7 +19,6 @@
 /data/cam_socket.*              u:object_r:camera_socket:s0
 /dev/gemini.*                   u:object_r:camera_device:s0
 /dev/rawchip.*                  u:object_r:camera_device:s0
-/dev/v4l-subdev.*               u:object_r:camera_device:s0
 /(system|vendor|system/vendor)/bin/mm-qcamera-daemon       u:object_r:mm-qcamerad_exec:s0
 
 ###################################
@@ -114,8 +113,3 @@
 
 # Qualcomm
 /system/bin/qseecomd                            u:object_r:qseecomd_exec:s0
-/dev/qseecom                                    u:object_r:qseecom_device:s0
-
-/dev/cpu_dma_latency                            u:object_r:device_latency:s0
-/dev/kgsl-3d0                                   u:object_r:gpu_device:s0
-/dev/hsicctl.*                                  u:object_r:hsic_device:s0
