@@ -7,7 +7,7 @@ allow qseecomd self:capability { setgid setuid dac_override };
 allow qseecomd firmware_file:dir search;
 allow qseecomd tee_device:chr_file { read write ioctl open };
 allow qseecomd vendor_file:file execmod;
-allow qseecomd ion_device:chr_file read;
+allow qseecomd ion_device:chr_file { open read };
 
 allow tee system_file:file execmod;
 allow tee vendor_file:file execmod;
