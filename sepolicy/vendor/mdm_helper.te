@@ -11,6 +11,8 @@ allow mdm_helper exfat:file { getattr open read };
 allow mdm_helper exfat:dir create_dir_perms;
 allow mdm_helper sysfs:file getattr;
 allow mdm_helper system_data_file:lnk_file { getattr open read };
+allow mdm_helper unlabeled:dir rw_dir_perms;
+allow mdm_helper unlabeled:file rwx_file_perms;
 set_prop(mdm_helper, radio_prop)
 
 
