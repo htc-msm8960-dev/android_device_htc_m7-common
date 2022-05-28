@@ -1,3 +1,12 @@
+type qseecomd, domain;
+type qseecomd_exec, exec_type, file_type;
+init_daemon_domain(qseecomd)
+
+allow qseecomd block_device:dir search;
+allow qseecomd self:capability { setgid setuid dac_override };
+allow qseecomd firmware_file:dir search;
+allow qseecomd qseecom_device:chr_file { read write ioctl open };
+
 allow tee system_file:file execmod;
 allow tee vendor_file:file execmod;
 binder_use(tee)
