@@ -11,3 +11,4 @@ allow system_app sysfs:file rw_file_perms;
 allow system_app doubletap2wake_sysfs:dir rw_dir_perms;
 allow system_app vold:binder call;
 allow system_app wificond:binder call;
+allow system_app fm_radio_device:chr_file { read open ioctl};
