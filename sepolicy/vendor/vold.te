@@ -2,3 +2,4 @@ allow vold hal_bootctl_hwservice:hwservice_manager find;
 allow vold block_device:blk_file rw_file_perms;
 allow vold sysfs_mmc_host:file w_file_perms;
 allow vold tee_device:chr_file rw_file_perms;
+allow vold cache_block_device:blk_file getattr;
