@@ -1,2 +1,6 @@
+allow dumpstate adbroot_exec:file getattr;
+allow dumpstate akmd_exec:file getattr;
+allow dumpstate apexd_exec:file getattr;
+allow dumpstate atrace_exec:file getattr;
 allow dumpstate firmware_file:dir search;
 allow dumpstate proc:file read;
