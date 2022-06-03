@@ -365,6 +365,12 @@ on boot
     # Bluetooth MAC address
     chown bluetooth bluetooth /sys/module/htc_bdaddress/parameters/bdaddress
 
+    # Set subsystem restart level
+    # 1 = SOC
+    # 2 = COUPLED
+    # 3 = INDEPENDENT
+    write /sys/module/subsystem_restart/parameters/restart_level 3
+
     # Wifi firmware reload path
     chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
 
@@ -392,7 +398,7 @@ service netmgrd /system/bin/netmgrd
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
     user root
-    group root readproc
+    group root system readproc wakelock
     disabled
 
 service qcamerasvr /system/bin/mm-qcamera-daemon
@@ -404,7 +410,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 service qmuxd /system/bin/qmuxd
     class core
     user root
-    group radio audio gps wakelock oem_2950
+    group radio audio bluetooth gps diag wakelock log oem_2950
 
 service qseecomd /system/bin/qseecomd
     class core

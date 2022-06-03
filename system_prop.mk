@@ -17,7 +17,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2015-08-05
-
-# Subsystem silent restart
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.sys.ssr.restart_level=modem,adsp,slpi
