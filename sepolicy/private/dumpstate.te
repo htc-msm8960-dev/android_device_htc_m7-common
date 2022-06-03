@@ -1,3 +1,6 @@
+type akmd, domain;
+type akmd_exec, exec_type, file_type;
+
 allow dumpstate adbroot_exec:file getattr;
 allow dumpstate akmd_exec:file getattr;
 allow dumpstate apexd_exec:file getattr;
