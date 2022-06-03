@@ -1,0 +1,2 @@
+allow dumpstate firmware_file:dir search;
+allow dumpstate proc:file read;
