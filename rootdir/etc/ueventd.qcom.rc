@@ -24,8 +24,8 @@
 /dev/msm_camera/*         0660   system     camera
 /dev/radio0               0640   system     system
 /dev/i2c-0                0664   root       system
-/dev/i2c-1                0664   root       system
 /dev/i2c-2                0664   root       system
+/dev/i2c-3                0664   root       system
 /dev/i2c-4                0664   root       system
 /dev/msm_mvs              0660   system     audio
 /dev/msm_voicememo        0660   system     audio
@@ -73,7 +73,6 @@
 /dev/mdm                  0660   system     radio
 /dev/ttyHSL1              0660   system     system
 /dev/tty_sdio_00          0660   system     system
-/dev/block/mmcblk0p17     0660   system     system
 /dev/block/mmcblk0p18     0660   system     system
 /dev/config*              0660   system     camera
 /dev/video*               0660   system     camera
@@ -162,3 +161,39 @@
 /sys/devices/virtual/optical_sensors/lightsensor    ls_poll_delay  0660    input    system
 /sys/devices/virtual/input/input*                   poll           0660    input    system
 /sys/devices/virtual/input/input*                   pollrate_ms    0660    input    system
+
+
+# From samsung jv
+/dev/qmi0                 0640   radio      radio
+/dev/qmi1                 0640   radio      radio
+/dev/qmi2                 0640   radio      radio
+/dev/smdcnt_rev0          0640   radio      radio
+/dev/smdcnt_rev1          0640   radio      radio
+/dev/smdcnt_rev2          0640   radio      radio
+/dev/smdcnt_rev3          0640   radio      radio
+/dev/smdcnt_rev4          0640   radio      radio
+/dev/smdcnt_rev5          0640   radio      radio
+/dev/smdcnt_rev6          0640   radio      radio
+/dev/smdcnt_rev7          0640   radio      radio
+/dev/smdcnt_rev8          0640   radio      radio
+/dev/v4l-subdev*          0660   system     camera
+/dev/graphics/*           0660   system     system
+/dev/tun                  0660   system     vpn
+/dev/smd_cxm_qmi          0640   radio      radio
+/dev/msm_amrwbplus        0660   system     audio
+/dev/msm_mp3              0660   system     audio
+/dev/msm_sps              0660   system     audio
+
+/sys/class/graphics/fb*     format_3d                0664    system  graphics
+/sys/class/graphics/fb*     hpd                      0664    system  graphics
+/sys/class/graphics/fb*     msm_fb_fps_level         0664    system  graphics
+/sys/class/graphics/fb*     pa                       0664    system  graphics
+/sys/class/graphics/fb*     product_description      0664    system  graphics
+/sys/class/graphics/fb*     vendor_name              0664    system  graphics
+/sys/class/graphics/fb*     video_mode               0664    system  graphics
+
+/sys/class/graphics/fb0     mode                     0664    system  graphics
+/sys/class/graphics/fb0     modes                    0664    system  graphics
+
+/dev/block/mmcblk0p17     0660   system     radio
+/dev/block/mmcblk0p31     0660   system     radio
