@@ -404,7 +404,7 @@ service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user camera
-    group camera system inet graphics
+    group camera system inet input graphics
 
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
