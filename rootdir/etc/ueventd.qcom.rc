@@ -195,5 +195,4 @@
 /sys/class/graphics/fb0     mode                     0664    system  graphics
 /sys/class/graphics/fb0     modes                    0664    system  graphics
 
-/dev/block/mmcblk0p17     0660   system     radio
-/dev/block/mmcblk0p31     0660   system     radio
+/dev/block/mmcblk0p*     0660   system     radio
