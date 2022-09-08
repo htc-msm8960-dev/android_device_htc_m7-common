@@ -1,0 +1,3 @@
+allow incidentd bluetooth_prop:file { open read };
+allow incidentd proc:file { open read };
+allow incident dumpstate:fifo_file write;

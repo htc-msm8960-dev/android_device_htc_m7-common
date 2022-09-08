@@ -1,0 +1,5 @@
+allow dumpstate akmd_exec:file getattr;
+allow dumpstate firmware_file:dir search;
+allow dumpstate proc:file { open read };
+allow dumpstate unlabeled:dir getattr;
+allow dumpstate unlabeled:filesystem getattr;

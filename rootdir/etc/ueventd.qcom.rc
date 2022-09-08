@@ -1,17 +1,17 @@
-/dev/rtc0                 0600   system     system
+/dev/rtc0                 0660   system     system
 
 # the DIAG device node is world writable/readable.
-/dev/diag                 0666   root       root
+/dev/diag                 0666   root       diag
 
 # the genlock client device node is world writable/readable.
-/dev/genlock              0666   root      root
+/dev/genlock              0666   system      system
 
 # gpu driver for adreno200 is globally accessible
-/dev/kgsl                 0666   root       root
-/dev/kgsl-3d0             0666   root       root
+/dev/kgsl                 0666   system       system
+/dev/kgsl-3d0             0666   system       system
 /dev/kgsl-2d0             0666   root       root
 /dev/kgsl-2d1             0666   root       root
-/dev/msm_rotator          0660   system     graphics
+/dev/msm_rotator          0660   system     system
 
 # these should not be world writable
 /dev/ttyHS0               0660   bluetooth  bluetooth
@@ -24,8 +24,8 @@
 /dev/msm_camera/*         0660   system     camera
 /dev/radio0               0640   system     system
 /dev/i2c-0                0664   root       system
-/dev/i2c-1                0664   root       system
 /dev/i2c-2                0664   root       system
+/dev/i2c-3                0664   root       system
 /dev/i2c-4                0664   root       system
 /dev/msm_mvs              0660   system     audio
 /dev/msm_voicememo        0660   system     audio
@@ -38,7 +38,7 @@
 /dev/smd2                 0660   bluetooth  bluetooth
 /dev/smd5                 0660   system     system
 /dev/smd6                 0660   system     system
-/dev/smd7                 0640   radio      radio
+/dev/smd7                 0660   radio      radio
 /dev/smd11                0660   radio      radio
 /dev/smdcntl0             0640   radio      radio
 /dev/smdcntl1             0640   radio      radio
@@ -73,7 +73,6 @@
 /dev/mdm                  0660   system     radio
 /dev/ttyHSL1              0660   system     system
 /dev/tty_sdio_00          0660   system     system
-/dev/block/mmcblk0p17     0660   system     system
 /dev/block/mmcblk0p18     0660   system     system
 /dev/config*              0660   system     camera
 /dev/video*               0660   system     camera
@@ -106,7 +105,7 @@
 /dev/msm_qcelp_in         0660  system       audio
 /dev/msm_evrc_in          0660  system       audio
 /dev/msm_preproc_ctl      0660  system       audio
-/dev/msm_a2dp_in          0640  system       audio
+/dev/msm_a2dp_in          0660  system       audio
 /dev/msm_amrnb_in         0660  system       audio
 /dev/msm_amrwb_in         0660  system       audio
 /sys/devices/virtual/smdpkt/smdcntl*       open_timeout   0664 radio radio
@@ -142,13 +141,13 @@
 # MPU3050
 /dev/mpu                  0664  system       system
 /dev/mpuirq               0664  system       system
-/dev/timerirq             0644  system       system
+/dev/timerirq             0664  system       system
 
 # AKM8963
 /dev/akm8963_dev          0660  system       system
 
 # Bluetooth
-/dev/btlock               0600  bluetooth    bluetooth
+/dev/btlock               0660  bluetooth    bluetooth
 
 # keystore
 /dev/qseecom              0660  system       drmrpc
@@ -162,3 +161,38 @@
 /sys/devices/virtual/optical_sensors/lightsensor    ls_poll_delay  0660    input    system
 /sys/devices/virtual/input/input*                   poll           0660    input    system
 /sys/devices/virtual/input/input*                   pollrate_ms    0660    input    system
+
+
+# From samsung jv
+/dev/qmi0                 0640   radio      radio
+/dev/qmi1                 0640   radio      radio
+/dev/qmi2                 0640   radio      radio
+/dev/smdcnt_rev0          0640   radio      radio
+/dev/smdcnt_rev1          0640   radio      radio
+/dev/smdcnt_rev2          0640   radio      radio
+/dev/smdcnt_rev3          0640   radio      radio
+/dev/smdcnt_rev4          0640   radio      radio
+/dev/smdcnt_rev5          0640   radio      radio
+/dev/smdcnt_rev6          0640   radio      radio
+/dev/smdcnt_rev7          0640   radio      radio
+/dev/smdcnt_rev8          0640   radio      radio
+/dev/v4l-subdev*          0660   system     camera
+/dev/graphics/*           0660   system     system
+/dev/tun                  0660   system     vpn
+/dev/smd_cxm_qmi          0640   radio      radio
+/dev/msm_amrwbplus        0660   system     audio
+/dev/msm_mp3              0660   system     audio
+/dev/msm_sps              0660   system     audio
+
+/sys/class/graphics/fb*     format_3d                0664    system  graphics
+/sys/class/graphics/fb*     hpd                      0664    system  graphics
+/sys/class/graphics/fb*     msm_fb_fps_level         0664    system  graphics
+/sys/class/graphics/fb*     pa                       0664    system  graphics
+/sys/class/graphics/fb*     product_description      0664    system  graphics
+/sys/class/graphics/fb*     vendor_name              0664    system  graphics
+/sys/class/graphics/fb*     video_mode               0664    system  graphics
+
+/sys/class/graphics/fb0     mode                     0664    system  graphics
+/sys/class/graphics/fb0     modes                    0664    system  graphics
+
+/dev/block/mmcblk0p*     0660   system     radio

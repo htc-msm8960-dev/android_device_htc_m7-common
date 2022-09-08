@@ -59,6 +59,7 @@
 #
 /data/system/default_values     u:object_r:mpctl_data_file:s0
 /dev/socket/mpctl               u:object_r:mpctl_socket:s0
+/(system|vendor|system/vendor)/bin/mpdecision          u:object_r:mpdecision_exec:s0
 
 ###################################
 # Rootfs Symlinks
@@ -108,4 +109,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.htc8960      u:object_r:hal_lineage_touch_default_exec:s0
 
 # TapToWake
-/sys/android_touch/doubletap2wake                         u:object_r:doubletap2wake_sysfs:s0 
+/sys/android_touch/doubletap2wake                         u:object_r:doubletap2wake_sysfs:s0
+
+# Qualcomm
+/system/bin/qseecomd                            u:object_r:qseecomd_exec:s0
